@@ -13,9 +13,9 @@ const shuffleArray = (array)=> {
 
 const imgs =[
   {'pair_id':"apple",url:'../images/apple.png'},
-  {'pair_id':"snape",url:'../images/snapchat.png'},
-  {'pair_id':"wisndows",url:'../images/windows.png'},
-  {'pair_id':"sşack",url:'../images/slack.png'}
+  {'pair_id':"snap",url:'../images/snapchat.png'},
+  {'pair_id':"windows",url:'../images/windows.png'},
+  {'pair_id':"slack",url:'../images/slack.png'}
 ];
 
 let newObjects = [...imgs,...imgs]
@@ -31,11 +31,11 @@ class Game extends Component {
   
  
   OpenImage(key){
-    console.log(key+ " id li resim açıldı")
+    console.log( "an image with a id of"+ key + " opened")
   
   }
   CloseImage(key){
-    console.log(key+ " id li resim kapatıldı")
+    console.log("an image with a id of"+ key + " closed")
   }
 
   setSelected = (e, img,index) =>{
@@ -48,13 +48,13 @@ class Game extends Component {
         pair_id: img.pair_id
       })
       this.OpenImage(index);
-      //console.log("ilk resim açıldı");
+      //console.log("first image opened");
   
     }else{
       
       if(this.state.active_key==index)
       {
-        return ;// burdan aiağısı .aşosöaz
+        return ;// it will stop working here
       
       } 
 
