@@ -29,7 +29,6 @@ export default class Card extends Component {
     }
 
     render() {
-   
         const {img, index, setSelected} = this.props
         return (
             <>
