@@ -34,9 +34,9 @@ export default class Card extends Component {
         return (
             <>
              {this.state.cardFaceDown ? 
-              <CardBack img={img} index={index} setSelected={setSelected}/> : 
+              <CardBack img={img} index={index} setSelected={setSelected} flipOneCard={this.flipOneCard}/> : 
 
-              <CardFront img={img} index={index} setSelected={setSelected}/>
+              <CardFront img={img} index={index} setSelected={setSelected} flipOneCard={this.flipOneCard}/>
             }
              
 {/*  
