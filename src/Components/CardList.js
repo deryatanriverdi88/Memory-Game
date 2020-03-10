@@ -8,7 +8,7 @@ const CardList = (props) => {
     return (
         <>
             {props.images.map((img, index )=>{
-                return <Card img={img} index={index} setSelected={props.setSelected} key={index} />
+                return <Card img={img} index={index}  key={index} />
             })}
         </>
     )
