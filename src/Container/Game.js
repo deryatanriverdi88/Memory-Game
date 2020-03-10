@@ -115,7 +115,7 @@ class Game extends Component {
   return(
    <div className="game">
          <div className="cards">
-           <CardList images={images} setSelected={this.setSelected}/> 
+           <CardList images={images}/> 
          </div>
    </div>
     )
