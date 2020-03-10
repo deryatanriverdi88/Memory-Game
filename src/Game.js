@@ -12,10 +12,18 @@ const shuffleArray = (array)=> {
 }
 
 const imgs =[
-  {'pair_id':"apple",url:'../images/apple.png'},
-  {'pair_id':"snap",url:'../images/snapchat.png'},
-  {'pair_id':"windows",url:'../images/windows.png'},
-  {'pair_id':"slack",url:'../images/slack.png'}
+  {pair_id:1,url:'../images/apple.png'},
+  {pair_id:2 ,url:'../images/facebook.png'},
+  {pair_id:3,url:'../images/github.png'},
+  {pair_id:4 ,url:'../images/google.png'}, 
+  {pair_id:5,url:'../images/instagram.png'},
+  {pair_id:6 ,url:'../images/linkedin.png'},
+  {pair_id:7,url:'../images/medium.png'},
+  {pair_id:8 ,url:'../images/netflix.png'}, 
+  {pair_id:9,url:'../images/slack.png'},
+  {pair_id:10 ,url:'../images/snapchat.png'},
+  {pair_id:11,url:'../images/twitter.png'},
+  {pair_id:12 ,url:'../images/windows.png'}
 ];
 
 let newObjects = [...imgs,...imgs]
@@ -25,7 +33,8 @@ const images= shuffleArray(newObjects)
 class Game extends Component {
  state = {
    active_key: null, 
-   pair_id: 0
+   pair_id: 0, 
+   cardFaceDown:true
  }
 
   
@@ -87,11 +96,14 @@ class Game extends Component {
        
        return images.map((img ,index)=> {
          //console.log(index)
-        return <div  key={index} style={{"width": "25%","float":"left", "display" :"inline-block"}}
-        onClick={(e) => this.setSelected( e, img, index)} ><img src={img.url} width="100%" alt={`${img}`} /></div>
-    
-    
-         })
+         if(this.state.cardFaceDown){
+          return  <div className="card "><img className="closed" key={index}
+          onClick={(e) => this.setSelected( e, img, index)} src={img.url} alt={`${img}`} /> </div>
+         } else {
+          return  <div className="card"><img key={index}
+          onClick={(e) => this.setSelected( e, img, index)} src={img.url} alt={`${img}`} /> </div>
+         }
+    })
      
   }
 
@@ -100,12 +112,11 @@ class Game extends Component {
    
   return(
    <div className="game">
-     <div className="board">
-       
-       <div className="cards">
-          {this.renderImages()}
-       </div>
-     </div>
+         <div className="cards">
+
+            {this.renderImages()}
+            
+         </div>
    </div>
     )
    }
