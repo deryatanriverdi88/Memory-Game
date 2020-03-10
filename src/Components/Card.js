@@ -20,15 +20,22 @@ export default class Card extends Component {
     //        }
     // }
 
+    flipOneCard = () => {
+        // if a card is clicked it should set the state of cardFacedown
+        console.log(this.props.index)
+        this.setState({
+            cardFaceDown: !this.state.cardFaceDown
+        })
+    }
+
     render() {
-   
         const {img, index, setSelected} = this.props
         return (
             <>
              {this.state.cardFaceDown ? 
-              <CardBack img={img} index={index} setSelected={setSelected}/> : 
+              <CardBack img={img} index={index} setSelected={setSelected} flipOneCard={this.flipOneCard}/> : 
 
-              <CardFront img={img} index={index} setSelected={setSelected}/>
+              <CardFront img={img} index={index} setSelected={setSelected} flipOneCard={this.flipOneCard}/>
             }
              
 {/*  
