@@ -26,7 +26,7 @@ export default class Card extends Component {
         // if a card is clicked it should set the state of cardFacedown
         console.log(this.props.index)
         this.setState({
-            cardFaceDown: !this.state.cardFaceDown
+            cardFaceDown: false
         })
     }
 
