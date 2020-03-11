@@ -25,11 +25,6 @@ export default class Card extends Component {
 
               <CardFront img={img} index={index} />
             }
-             
-{/*  
-              <CardFront img={img} index={index} setSelected={setSelected}/>
-
-              <CardBack img={img} index={index} setSelected={setSelected}/> */}
             </>
         )
     }
