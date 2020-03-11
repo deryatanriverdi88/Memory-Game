@@ -7,7 +7,8 @@ export default class CardList extends Component {
 
     state = {
         imgId: null,
-        index: null 
+        index: null, 
+        match: false
     }
 
     setSelected = (id, index) => {
@@ -19,6 +20,10 @@ export default class CardList extends Component {
 
         if(this.state.imgId === id){
             console.log('match')
+            //if  there is a match cards should stay up
+            this.setState({
+                match: true
+            })
         } else {
             console.log(" no match")
         }
