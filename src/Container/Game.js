@@ -34,84 +34,55 @@ const images= shuffleArray(newObjects)
 
 class Game extends Component {
  state = {
-   index: null, 
-   imgId: null
+   
  }
-
-  
- 
-  OpenImage(index, img){
-    console.log( "an image with a index of"+ index + " opened")
-  }
-
-  CloseImage(key){
-    console.log("an image with a index of"+ key + " closed")
-  }
-
-  setSelected = (e, img,index) =>{
-
-    if(this.state.index==null)
-    { 
-      this.setState({
-        index: index, 
-        imgId: img.id, 
-        
-      })
-      this.OpenImage(index, img);
-      //console.log("first image opened");
-  
-    }else{
-      
-      if(this.state.index===index)
-      {
-        return ;// it will stop working here
-      
-      } 
-
-      this.OpenImage(index);
-
-      if(this.state.imgId!==img.id)
-      {
-        console.log("photos are not the same ",this.state.imgId,img.id )
-
-          this.CloseImage(this.state.index);
-          this.CloseImage(index);
-          
-      }
-      else{
-        console.log("photos are the same",this.state.imgId, img.id)
-        
-      }
-
-      this.setState({
-        index:null, 
-        imgId: null
-      })
-
-    }
-
-  }
-  // renderImages  = () => {
-      
-  //     //  let newImages= [...images,...images]
-       
-  //      return images.map((img ,index)=> {
-  //        //console.log(index)
-  //       //  if(this.state.cardFaceDown){
-  //       //   return  <div className="card "><img className="back" key={index}
-  //       //   onClick={(e) => this.setSelected( e, img, index)} src={img.url} alt={`${img}`} /> </div>
-  //       //  } else {
-  //       //   return  <div className="card"><img className="front" key={index}
-  //       //   onClick={(e) => this.setSelected( e, img, index)} src={img.url} alt={`${img}`} /> </div>
-  //       //  }
-  //       return <Card setSelected={this.setSelected} img={img} index={index} />
-  //   })
-     
+  // OpenImage(index, img){
+  //   console.log( "an image with a index of"+ index + " opened")
   // }
 
- render() {
-  // console.log(this.state)
-   
+  // CloseImage(key){
+  //   console.log("an image with a index of"+ key + " closed")
+  // }
+
+  // setSelected = (e, img,index) =>{
+  //   if(this.state.index==null)
+  //   { 
+  //     this.setState({
+  //       index: index, 
+  //       imgId: img.id, 
+  //     })
+  //     this.OpenImage(index, img);
+  //     //console.log("first image opened");
+  //   }else{
+  //     if(this.state.index===index)
+  //     {
+  //       return ;// it will stop working here
+  //     }
+  //     this.OpenImage(index);
+
+  //     if(this.state.imgId!==img.id)
+  //     {
+  //       console.log("photos are not the same ",this.state.imgId,img.id )
+
+  //         this.CloseImage(this.state.index);
+  //         this.CloseImage(index);
+          
+  //     }
+  //     else{
+  //       console.log("photos are the same",this.state.imgId, img.id)
+        
+  //     }
+
+  //     this.setState({
+  //       index:null, 
+  //       imgId: null
+  //     })
+
+  //   }
+
+  // }
+
+ render() {   
   return(
    <div className="game">
          <div className="cards">

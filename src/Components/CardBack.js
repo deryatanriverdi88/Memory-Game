@@ -7,7 +7,7 @@ export default class CardBack extends Component {
         return (
             <div className="card" onClick={() => flipOneCard()}>
                 <img className="front" key={index}
-                onClick={(e) => setSelected( e, img, index)} src="../logo192.png" alt={`${img}`}  /> 
+                onClick={() => setSelected(img.id, index)} src="../logo192.png" alt={`${img}`}  /> 
            </div>
         )
     }
