@@ -26,6 +26,7 @@ export default class CardList extends Component {
             })
         } else {
             console.log(" no match")
+            //if  there isnt a match the cards should be  set down  to  facedown
         }
         // this method should compare two cards 
         //
