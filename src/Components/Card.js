@@ -28,14 +28,14 @@ export default class Card extends Component {
     }
 
     render() {
-        const {img, index, setSelected} = this.props
+        const {img, index, setSelected, match} = this.props
     
         return (
             <>
              {this.state.cardFaceDown ? 
               <CardBack img={img} index={index} setSelected={this.props.setSelected} flipOneCard={this.flipOneCard}/> : 
 
-              <CardFront img={img} index={index} />
+              <CardFront img={img} index={index}  />
             }
             </>
         )
