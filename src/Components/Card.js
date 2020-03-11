@@ -15,6 +15,18 @@ export default class Card extends Component {
         })
     }
 
+    matchedCards = () =>{
+       if (this.props.match ===  false){
+           this.setState({
+               cardFaceDown: true
+           })
+       }
+    }
+
+    componentDidMount = () => {
+        this.matchedCards()
+    }
+
     render() {
         const {img, index, setSelected} = this.props
     
