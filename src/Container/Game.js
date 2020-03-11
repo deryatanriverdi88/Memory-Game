@@ -33,9 +33,6 @@ const images= shuffleArray(newObjects)
 
 
 class Game extends Component {
- state = {
-   
- }
   // OpenImage(index, img){
   //   console.log( "an image with a index of"+ index + " opened")
   // }
@@ -59,27 +56,20 @@ class Game extends Component {
   //       return ;// it will stop working here
   //     }
   //     this.OpenImage(index);
-
   //     if(this.state.imgId!==img.id)
   //     {
   //       console.log("photos are not the same ",this.state.imgId,img.id )
-
   //         this.CloseImage(this.state.index);
   //         this.CloseImage(index);
-          
   //     }
   //     else{
   //       console.log("photos are the same",this.state.imgId, img.id)
-        
   //     }
-
   //     this.setState({
   //       index:null, 
   //       imgId: null
   //     })
-
   //   }
-
   // }
 
  render() {   
