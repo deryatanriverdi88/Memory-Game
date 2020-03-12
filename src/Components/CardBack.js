@@ -5,9 +5,9 @@ export default class CardBack extends Component {
     render() {
         const {img, index, setSelected, flipOneCard} = this.props
         return (
-            <div className="card" onClick={() => flipOneCard()}>
+            <div className="card" onClick={() => flipOneCard(img.id, index)}>
                 <img className="front" key={index}
-                onClick={() => setSelected(img.id, index)} src="../logo192.png" alt={`${img}`}  /> 
+               src="../logo192.png" alt={`${img}`}  /> 
            </div>
         )
     }

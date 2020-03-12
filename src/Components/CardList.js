@@ -26,16 +26,18 @@ export default class CardList extends Component {
             })
         } else {
             console.log(" no match")
-            //if  there isnt a match the cards should be  set down  to  facedown
+            this.setState({
+                match: false
+            })
         }
         // this method should compare two cards 
         //
-       console.log(this.state.index, this.state.imgId)
+       console.log("setSelected " ,"index " , this.state.index, "id " , this.state.imgId)
 
     }
 
     render() {
-        console.log(this.state.index, this.state.imgId)
+        console.log("render " , "index "  , this.state.index, "id " , this.state.imgId)
         
         return (
             <>
