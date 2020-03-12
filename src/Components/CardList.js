@@ -48,12 +48,11 @@ export default class CardList extends Component {
        }
         // this method should compare two cards 
         //
-       console.log("setSelected " ,"index " , this.state.index, "id " , this.state.imgId)
 
     }
 
     render() {
-        console.log("render " , "index "  , this.state.index, "id " , this.state.imgId)
+      console.log(this.state.matchedPairs)
         
         return (
             <>
