@@ -14,23 +14,38 @@ export default class CardList extends Component {
 
     setSelected = (id, index) => {
         console.log('img selected')
+        if(this.state.index === null)
         this.setState({
             imgId: id,
             index: index
         })
+       else {
+           if(this.state.imgId === id){
+               console.log('match')
+               //if  there is a match cards should stay up
+               this.setState({
 
-        if(this.state.imgId === id){
-            console.log('match')
-            //if  there is a match cards should stay up
-            this.setState({
-                match: true
-            })
-        } else {
-            console.log(" no match")
-            this.setState({
-                match: false
-            })
-        }
+                  match: true,
+                  matchedPairs: [...this.state.matchedPairs, id]
+
+               })
+            
+              
+           } else {
+               console.log(" no match")
+               this.setState({
+                   match: false,
+            
+               })
+            
+           }
+
+           this.setState({
+               index: null, 
+               imgId: null
+           })
+
+       }
         // this method should compare two cards 
         //
        console.log("setSelected " ,"index " , this.state.index, "id " , this.state.imgId)
