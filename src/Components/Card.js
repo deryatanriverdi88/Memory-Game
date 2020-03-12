@@ -9,10 +9,11 @@ export default class Card extends Component {
     }
 
  
-    flipOneCard = () => {
+    flipOneCard = (imgId, index) => {
         this.setState({
             cardFaceDown: false
         })
+        this.props.setSelected(imgId, index)
     }
 
     matchedCards = () =>{
@@ -23,19 +24,16 @@ export default class Card extends Component {
        }
     }
 
-    componentDidMount = () => {
-        this.matchedCards()
-    }
-
     render() {
+      
         const {img, index, setSelected, match} = this.props
     
         return (
             <>
              {this.state.cardFaceDown ? 
-              <CardBack img={img} index={index} setSelected={this.props.setSelected} flipOneCard={this.flipOneCard}/> : 
+              <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/> : 
 
-              <CardFront img={img} index={index}  />
+              <CardFront img={img} index={index} matchedCards={this.matchedCards} />
             }
             </>
         )
