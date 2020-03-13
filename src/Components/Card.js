@@ -16,13 +16,28 @@ export default class Card extends Component {
         this.props.setSelected(imgId, index)
     }
 
-    matchedCards = () =>{
-       if (this.props.match ===  false){
-           this.setState({
-               cardFaceDown: true
-           })
-       }
+    matchedCards = (id) =>{
+        // this method should cycle through  the matched pairs array from card list
+        // check the id's in matched pairs and comapre the id to the arrray
+        // if its not  there it should flip them back over
+        if (this.props.matchedPairs.legth){
+            for(let i=0; i < this.props.matchedPairs.length; i++){
+                if (this.props.matchedPairs !== id){
+                    this.setState({
+                        cardFaceDown:true
+                    })
+                }
+            }
+        }
+
+
+        //    if (this.props.match ===  false){
+    //        this.setState({
+    //            cardFaceDown: true
+    //        })
+    //    }
     }
+
 
     render() {
       
