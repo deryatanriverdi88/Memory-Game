@@ -30,18 +30,22 @@ export default class CardList extends Component {
         this.compareCards()
     }
 
-    compareCards = () =>{
+    compareCards = () => {
         if(this.state.firstCard ===  this.state.secondCard){
             this.setState({
-                match: true
+                match: true,
+                matchedPairs: [...this.state.matchedPairs, this.state.firstCard]
             })
             console.log('match')
         } else {
+            this.setState({
+                match: false
+            })
             console.log('no match')
         }
-        this. clearCards()
+        this.clearCards()
     }
-
+    
     clearCards = () => {
         this.setState({
             firstCard: null,
