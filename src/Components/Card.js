@@ -8,57 +8,51 @@ export default class Card extends Component {
         cardFaceDown: true
     }
 
- 
-    flipOneCard = (imgId, index) => {
-        
+    flipOneCard = (imgId) => {
         this.setState({
             cardFaceDown: false
         })
         this.props.choosenCards(imgId)
     }
 
-    // matchedCards = () =>{
-    //     console.log('matchedCards')
-    //    if (this.props.match ===  false){
-    //        this.setState({
-    //            cardFaceDown: true
-    //        })
-    //    } else {
-    //     this.setState({
-    //         cardFaceDown: false
-    //     })
-    //    }
-    // }
+    reverseCard = () => {
+        if (this.props.match  === false)
+        for (let i = 0; i < this.props.matchedPairs.length; i++ )
+            if(this.props.matchedPairs[i]=== this.props.img.id){
+                this.setState({
+                            cardFaceDown: false
+                })
+            }
+    }
 
-    // componentDidMount = () => {
-        
-    //         for(let i = 0; i < this.props.matchedPairs.length; i++){
-    //             console.log(this.props.matchedPairs[i] , this.props.img.id)
-    //             if(this.props.matchedPairs[i] === this.props.img.id){
-    //                 this.setState({
-    //                     cardFaceDown: false
-    //                 })
-    //             } else {
-    //                 this.setState({
-    //                     cardFaceDown: true
-    //                 })
-    //             }
-    //         }
-        
-    // }
+    renderCards = () => {
+        const {img, index} = this.props
+        if (this.state.cardFaceDown){
+            return <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/>
+        } else{
+            return <CardFront img={img} index={index} />
+          }
+    }
 
+    renderMatchedCards = () => {
+        console.log('i am here')
+        const {img, index, matchedPairs, match} = this.props
+        if (matchedPairs){
+            console.log(match)
+            for (let i = 0; i < matchedPairs.length; i++ )
+                if(matchedPairs[i] !== img.id){
+                    return <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/>
+                } else {
+                    return <CardFront img={img} index={index} />
+                }
+        }
+    }
 
     render() {
-      
-        const {img, index, setSelected, match} = this.props
-    
+        const {matchedPairs} = this.props
         return (
             <>
-             {this.state.cardFaceDown ? 
-              <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/> : 
-
-              <CardFront img={img} index={index} />
-            }
+             {matchedPairs.length?  this.renderMatchedCards(): this.renderCards()}
             </>
         )
     }
