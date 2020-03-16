@@ -8,8 +8,8 @@ export default class CardList extends Component {
     state = {
         firstCard: null, 
         secondCard: null,
-        match: false
-        // matchedPairs: []
+        match: false,
+        matchedPairs: []
     }
 
     choosenCards = (imgId) => {
