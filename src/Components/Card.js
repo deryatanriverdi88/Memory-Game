@@ -34,6 +34,19 @@ export default class Card extends Component {
           }
     }
 
+    renderMatchedCards = () => {
+        console.log('i am here')
+        const {img, index, matchedPairs, match} = this.props
+        if (matchedPairs){
+            console.log(match)
+            for (let i = 0; i < matchedPairs.length; i++ )
+                if(matchedPairs[i] !== img.id){
+                    return <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/>
+                } else {
+                    return <CardFront img={img} index={index} />
+                }
+        }
+    }
 
     render() {
       
