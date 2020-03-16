@@ -25,22 +25,14 @@ export default class Card extends Component {
             }
     }
 
-    // componentDidMount = () => {
-        
-    //         for(let i = 0; i < this.props.matchedPairs.length; i++){
-    //             console.log(this.props.matchedPairs[i] , this.props.img.id)
-    //             if(this.props.matchedPairs[i] === this.props.img.id){
-    //                 this.setState({
-    //                     cardFaceDown: false
-    //                 })
-    //             } else {
-    //                 this.setState({
-    //                     cardFaceDown: true
-    //                 })
-    //             }
-    //         }
-        
-    // }
+    renderCards = () => {
+        const {img, index} = this.props
+        if (this.state.cardFaceDown){
+            return <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/>
+        } else{
+            return <CardFront img={img} index={index} />
+          }
+    }
 
 
     render() {
@@ -49,11 +41,7 @@ export default class Card extends Component {
     
         return (
             <>
-             {this.state.cardFaceDown ? 
-              <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/> : 
-
-              <CardFront img={img} index={index} />
-            }
+             {matchedPairs.length?  this.renderMatchedCards(): this.renderCards()}
             </>
         )
     }
