@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 
 export default class CardFront extends Component {
-
-    componentDidUpdate = () => {
-        this.props.matchedCards()
-    }
+     
 
     render() {
         const {img, index, setSelected} = this.props
