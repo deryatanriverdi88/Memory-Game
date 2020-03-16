@@ -15,18 +15,15 @@ export default class Card extends Component {
         this.props.choosenCards(imgId)
     }
 
-    // matchedCards = () =>{
-    //     console.log('matchedCards')
-    //    if (this.props.match ===  false){
-    //        this.setState({
-    //            cardFaceDown: true
-    //        })
-    //    } else {
-    //     this.setState({
-    //         cardFaceDown: false
-    //     })
-    //    }
-    // }
+    reverseCard = () => {
+        if (this.props.match  === false)
+        for (let i = 0; i < this.props.matchedPairs.length; i++ )
+            if(this.props.matchedPairs[i]=== this.props.img.id){
+                this.setState({
+                            cardFaceDown: false
+                })
+            }
+    }
 
     // componentDidMount = () => {
         
