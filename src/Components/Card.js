@@ -8,9 +8,7 @@ export default class Card extends Component {
         cardFaceDown: true
     }
 
- 
-    flipOneCard = (imgId, index) => {
-        
+    flipOneCard = (imgId) => {
         this.setState({
             cardFaceDown: false
         })
