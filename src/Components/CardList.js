@@ -6,10 +6,10 @@ import Card from './Card'
 export default class CardList extends Component {
 
     state = {
-        imgId: null,
-        index: null, 
-        match: false, 
-        matchedPairs: []
+        firstCard: null, 
+        secondCard: null,
+        match: false
+        // matchedPairs: []
     }
 
     setSelected = (id, index) => {
