@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 export default class CardFront extends Component {
-     
 
     render() {
         const {img, index, setSelected} = this.props

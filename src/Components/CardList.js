@@ -47,6 +47,7 @@ export default class CardList extends Component {
             firstCard: null,
             secondCard: null
         })
+
     }
 
 
@@ -88,6 +89,7 @@ export default class CardList extends Component {
     //     //
 
     // }
+
 
     render() {
       console.log(this.state.firstCard, this.state.secondCard)
