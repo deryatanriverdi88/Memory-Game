@@ -49,9 +49,7 @@ export default class Card extends Component {
     }
 
     render() {
-      
-        const {img, index, setSelected, match} = this.props
-    
+        const {matchedPairs} = this.props
         return (
             <>
              {matchedPairs.length?  this.renderMatchedCards(): this.renderCards()}
