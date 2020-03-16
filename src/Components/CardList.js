@@ -24,31 +24,22 @@ export default class CardList extends Component {
                console.log('match')
                //if  there is a match cards should stay up
                this.setState({
-
                   match: true,
                   matchedPairs: [...this.state.matchedPairs, id]
-
                })
-            
-              
            } else {
                console.log(" no match")
                this.setState({
                    match: false,
-            
                })
-            
            }
-
            this.setState({
-               index: null, 
+               index: null,
                imgId: null
            })
-
        }
         // this method should compare two cards 
         //
-
     }
 
     render() {
