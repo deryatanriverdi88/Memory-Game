@@ -55,7 +55,7 @@ export default class CardList extends Component {
     }
 
     render() {
-      console.log(this.state.firstCard, this.state.secondCard)
+      console.log(this.state.matchedPairs, this.state.match)
         
         return (
             <>
