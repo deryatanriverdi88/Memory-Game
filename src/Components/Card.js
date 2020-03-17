@@ -5,54 +5,32 @@ import CardBack from './CardBack'
 export default class Card extends Component {
 
     state = {
-        cardFaceDown: true
+        cardFaceUp: false
     }
-
-    flipOneCard = (imgId) => {
+   
+    flipOneCard = (img) => {
         this.setState({
-            cardFaceDown: false
+            cardFaceUp: true
         })
-        this.props.choosenCards(imgId)
+        this.props.choosenCards(img)
     }
-
+   
     reverseCard = () => {
-        if (this.props.match  === false)
-        for (let i = 0; i < this.props.matchedPairs.length; i++ )
-            if(this.props.matchedPairs[i]=== this.props.img.id){
-                this.setState({
-                            cardFaceDown: false
-                })
-            }
-    }
-
-    renderCards = () => {
-        const {img, index} = this.props
-        if (this.state.cardFaceDown){
-            return <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/>
-        } else{
-            return <CardFront img={img} index={index} />
-          }
-    }
-
-    renderMatchedCards = () => {
-        console.log('i am here')
-        const {img, index, matchedPairs, match} = this.props
-        if (matchedPairs){
-            console.log(match)
-            for (let i = 0; i < matchedPairs.length; i++ )
-                if(matchedPairs[i] !== img.id){
-                    return <CardBack img={img} index={index} flipOneCard={this.flipOneCard}/>
-                } else {
-                    return <CardFront img={img} index={index} />
-                }
-        }
+        setTimeout(()=> {
+            this.setState({
+                cardFaceUp: false
+            })
+        }, 500)
     }
 
     render() {
-        const {matchedPairs} = this.props
+       const {img} = this.props
         return (
             <>
-             {matchedPairs.length?  this.renderMatchedCards(): this.renderCards()}
+            {this.state.cardFaceUp || img.faceUp ?  
+            <CardFront img={img} reverseCard={this.reverseCard}/>
+             : 
+            <CardBack img={img}flipOneCard={this.flipOneCard}/> }
             </>
         )
     }
