@@ -29,6 +29,17 @@ export default class CardList extends Component {
     componentDidUpdate= () => {
         if (this.state.firstCard && this.state.secondCard) 
         this.compareCards()
+        
+    }
+
+    handleFaceUp = (images, card) => {
+       return images.map(image => {
+            if (image.id === card.id) {
+               return card
+            } else {
+                return image
+            }
+        })
     }
 
     compareCards = () => {
