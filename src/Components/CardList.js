@@ -51,7 +51,7 @@ export default class CardList extends Component {
             console.log('match')
         } else {
             this.setState({
-                match: false
+                matchedPairs: [...this.state.matchedPairs]
             })
             console.log('no match')
         }
