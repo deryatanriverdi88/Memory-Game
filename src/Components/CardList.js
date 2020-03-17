@@ -13,15 +13,15 @@ export default class CardList extends Component {
         matchedPairs: []
     }
 
-    choosenCards = (imgId) => {
+    choosenCards = (img) => {
          if(this.state.firstCard === null){
             console.log(this.state.firstCard)
             this.setState({
-                firstCard: imgId
+                firstCard: {...img, faceUp:true}
             }) 
         } else if(this.state.firstCard){
             this.setState({
-                secondCard: imgId
+                secondCard: {...img, faceUp:true}
             })
         } 
     }
