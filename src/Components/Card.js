@@ -5,7 +5,7 @@ import CardBack from './CardBack'
 export default class Card extends Component {
 
     state = {
-        cardFaceDown: true
+        cardFaceUp: false
     }
 
     flipOneCard = (imgId) => {
