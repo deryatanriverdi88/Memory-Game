@@ -30,7 +30,7 @@ export default class Card extends Component {
             {this.state.cardFaceUp || img.faceUp ?  
             <CardFront img={img} reverseCard={this.reverseCard}/>
              : 
-            <CardBack img={img}flipOneCard={this.flipOneCard}/> }
+            <CardBack img={img} flipOneCard={this.flipOneCard}/> }
             </>
         )
     }

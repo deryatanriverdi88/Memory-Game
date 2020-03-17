@@ -9,7 +9,6 @@ export default class CardList extends Component {
         firstCard: null, 
         secondCard: null,
         images: [...this.props.images],
-        match: false,
         matchedPairs: []
     }
 
@@ -52,7 +51,7 @@ export default class CardList extends Component {
             console.log('match')
         } else {
             this.setState({
-                match: false
+                matchedPairs: [...this.state.matchedPairs]
             })
             console.log('no match')
         }
@@ -78,7 +77,7 @@ export default class CardList extends Component {
             <>
             {this.winner()}
             {this.state.images.map((img, index )=>{
-                return <Card img={img} match={this.state.match} key={index} choosenCards={this.choosenCards} matchedPairs={this.state.matchedPairs}/>
+                return <Card img={img} key={index} choosenCards={this.choosenCards} matchedPairs={this.state.matchedPairs}/>
             })}
         </>
         )
