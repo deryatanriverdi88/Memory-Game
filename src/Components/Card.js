@@ -7,12 +7,12 @@ export default class Card extends Component {
     state = {
         cardFaceUp: false
     }
-
-    flipOneCard = (imgId) => {
+   
+    flipOneCard = (img) => {
         this.setState({
-            cardFaceDown: false
+            cardFaceUp: true
         })
-        this.props.choosenCards(imgId)
+        this.props.choosenCards(img)
     }
 
     reverseCard = () => {
