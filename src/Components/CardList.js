@@ -64,7 +64,12 @@ export default class CardList extends Component {
             firstCard: null,
             secondCard: null
         })
+    }
 
+    winner = () => {
+        if (this.state.matchedPairs.length  === 12){
+           setTimeout(() => {return alert("Winner")}, 10)
+        } 
     }
 
     render() {
