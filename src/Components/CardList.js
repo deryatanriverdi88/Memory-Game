@@ -73,12 +73,12 @@ export default class CardList extends Component {
     }
 
     render() {
-      console.log(this.state.matchedPairs, this.state.match)
-        
+        console.log(this.state.matchedPairs.length)
         return (
             <>
-            {this.props.images.map((img, index )=>{
-                return <Card img={img} index={index} match={this.state.match} key={index} choosenCards={this.choosenCards} matchedPairs={this.state.matchedPairs}/>
+            {this.winner()}
+            {this.state.images.map((img, index )=>{
+                return <Card img={img} match={this.state.match} key={index} choosenCards={this.choosenCards} matchedPairs={this.state.matchedPairs}/>
             })}
         </>
         )
