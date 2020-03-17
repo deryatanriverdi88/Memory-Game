@@ -33,45 +33,7 @@ const images= shuffleArray(newObjects)
 // const images= newObjects
 
 class Game extends Component {
-  // OpenImage(index, img){
-  //   console.log( "an image with a index of"+ index + " opened")
-  // }
-
-  // CloseImage(key){
-  //   console.log("an image with a index of"+ key + " closed")
-  // }
-
-  // setSelected = (e, img,index) =>{
-  //   if(this.state.index==null)
-  //   { 
-  //     this.setState({
-  //       index: index, 
-  //       imgId: img.id, 
-  //     })
-  //     this.OpenImage(index, img);
-  //     //console.log("first image opened");
-  //   }else{
-  //     if(this.state.index===index)
-  //     {
-  //       return ;// it will stop working here
-  //     }
-  //     this.OpenImage(index);
-  //     if(this.state.imgId!==img.id)
-  //     {
-  //       console.log("photos are not the same ",this.state.imgId,img.id )
-  //         this.CloseImage(this.state.index);
-  //         this.CloseImage(index);
-  //     }
-  //     else{
-  //       console.log("photos are the same",this.state.imgId, img.id)
-  //     }
-  //     this.setState({
-  //       index:null, 
-  //       imgId: null
-  //     })
-  //   }
-  // }
-
+  
  render() {   
   return(
    <div className="game">
