@@ -8,6 +8,7 @@ export default class CardList extends Component {
     state = {
         firstCard: null, 
         secondCard: null,
+        images: [...this.props.images],
         match: false,
         matchedPairs: []
     }
