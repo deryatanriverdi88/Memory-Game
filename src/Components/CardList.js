@@ -43,10 +43,11 @@ export default class CardList extends Component {
     }
 
     compareCards = () => {
-        if(this.state.firstCard ===  this.state.secondCard){
+        if(this.state.firstCard.id ===  this.state.secondCard.id){
+            const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
             this.setState({
-                match: true,
-                matchedPairs: [...this.state.matchedPairs, this.state.firstCard]
+                images: newImages,
+                matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id]
             })
             console.log('match')
         } else {
