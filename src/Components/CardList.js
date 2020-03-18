@@ -70,7 +70,7 @@ export default class CardList extends Component {
         return (
             <>
             <div style={{"width":"100%", "color":"white"}}>
-            <h1>Moves: {this.state.moves}</h1>
+                <h1>Moves: {this.props.moves}</h1>
             </div>
             {this.winner()}
             {this.state.images.map((img, index )=>{
