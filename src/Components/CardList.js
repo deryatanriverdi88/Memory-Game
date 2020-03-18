@@ -1,7 +1,5 @@
-
 import React, {Component} from 'react'
 import Card from './Card'
-
 
 export default class CardList extends Component {
 
@@ -67,7 +65,7 @@ export default class CardList extends Component {
 
     winner = () => {
         if (this.state.matchedPairs.length  === 12){
-           setTimeout(() => {return alert("Winner")}, 20)
+           setTimeout(() => {this.props.redirect('winner')}, 20)
         } 
     }
 
