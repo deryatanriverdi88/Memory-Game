@@ -4,31 +4,28 @@ import Card from './Card'
 export default class CardList extends Component {
 
     state = {
-        firstCard: null, 
+        firstCard: null,
         secondCard: null,
         images: [...this.props.images],
-        matchedPairs: [],
-        moves: 0
+        matchedPairs: []
     }
 
     choosenCards = (img) => {
          if(this.state.firstCard === null){
-            console.log(this.state.firstCard)
             this.setState({
                 firstCard: {...img, faceUp:true}
-            }) 
+            })
         } else if(this.state.firstCard){
             this.setState({
                 secondCard: {...img, faceUp:true},
-                moves : this.state.moves + 1
-            })
-        } 
+            },
+            this.props.setMoves())
+        }
     }
 
     componentDidUpdate= () => {
-        if (this.state.firstCard && this.state.secondCard) 
+        if (this.state.firstCard && this.state.secondCard)
         this.compareCards()
-        
     }
 
     handleFaceUp = (images, card) => {
@@ -48,12 +45,10 @@ export default class CardList extends Component {
                 images: newImages,
                 matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id]
             })
-            console.log('match')
         } else {
             this.setState({
                 matchedPairs: [...this.state.matchedPairs]
             })
-            console.log('no match')
         }
         this.clearCards()
     }
@@ -68,15 +63,14 @@ export default class CardList extends Component {
     winner = () => {
         if (this.state.matchedPairs.length  === 12){
            setTimeout(() => {this.props.redirect('winner')}, 20)
-        } 
+        }
     }
 
     render() {
-        console.log(this.state.moves)
         return (
             <>
             <div style={{"width":"100%", "color":"white"}}>
-            <h1>Moves: {this.state.moves}</h1>
+                <h1>Moves: {this.props.moves}</h1>
             </div>
             {this.winner()}
             {this.state.images.map((img, index )=>{

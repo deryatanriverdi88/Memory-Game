@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CardList from '../Components/CardList';
 import Winner from '../Components/Winner'
+import Timer from '../Components/Timer'
 
 const shuffleArray = (array)=> {
   let i = array.length - 1;
@@ -29,12 +30,13 @@ const imgs =[
 ];
 
 let newObjects = [...imgs,...imgs]
-// const images= shuffleArray(newObjects)
-const images= newObjects
+const images= shuffleArray(newObjects)
+// const images= newObjects
 
 class Game extends Component {
  state = {
-   gameStatus: "play"
+   gameStatus: "play", 
+   moves: 0
  }
 
  redirect = (page) => {
@@ -43,15 +45,21 @@ class Game extends Component {
   })
  }
 
+ setMoves = () => {
+    this.setState({
+      moves : this.state.moves + 1
+    })
+ }
+
  renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
       return <div className="cards">
-          <CardList images={images} redirect={this.redirect}/>
+          <CardList images={images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves}/>
         </div>
     case "winner":
       return <div >
-          <Winner redirect={this.redirect} />
+          <Winner redirect={this.redirect} moves={this.state.moves} />
       </div>
    }
  }
@@ -59,9 +67,7 @@ class Game extends Component {
  render() {   
   return(
    <div className="game">
-         {/* <div className="cards">
-           <CardList images={images} /> 
-         </div> */}
+         <Timer  gameStatus={this.state.gameStatus}/>
          {this.renderGame()}
    </div>
     )
