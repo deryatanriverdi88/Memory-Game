@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CardList from '../Components/CardList';
 import Winner from '../Components/Winner'
+import Timer from '../Components/Timer'
 
 const shuffleArray = (array)=> {
   let i = array.length - 1;
@@ -67,9 +68,7 @@ class Game extends Component {
  render() {   
   return(
    <div className="game">
-         {/* <div className="cards">
-           <CardList images={images} /> 
-         </div> */}
+         <Timer  gameStatus={this.state.gameStatus}/>
          {this.renderGame()}
    </div>
     )
