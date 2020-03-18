@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <svg viewbox="0 0 300 300">
+	<path d="M25 50,
+					 C25 10, 80 10, 75 50" id="curve"/> 
+	<path d="M15 50,
+					  C20 90, 80 90, 85 50"
+				id="curve-2"/>
+	<text x="5" fill="red" stroke="black" class="first">
+		<textpath xlink:href="#curve">
+		  Total Recall
+		</textpath>
+		
+	</text>
+	
+	<text x="5" fill="red" stroke="black" class="second">
+		<textpath xlink:href="#curve-2">
+		 Total Recall
+		</textpath>
+
+	</text>
+</svg>
+</body>
+</html>
