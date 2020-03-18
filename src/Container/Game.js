@@ -29,12 +29,13 @@ const imgs =[
 ];
 
 let newObjects = [...imgs,...imgs]
-// const images= shuffleArray(newObjects)
-const images= newObjects
+const images= shuffleArray(newObjects)
+// const images= newObjects
 
 class Game extends Component {
  state = {
-   gameStatus: "play"
+   gameStatus: "play", 
+   moves: 0
  }
 
  redirect = (page) => {

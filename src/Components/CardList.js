@@ -4,7 +4,7 @@ import Card from './Card'
 export default class CardList extends Component {
 
     state = {
-        firstCard: null, 
+        firstCard: null,
         secondCard: null,
         images: [...this.props.images],
         matchedPairs: []
@@ -14,7 +14,7 @@ export default class CardList extends Component {
          if(this.state.firstCard === null){
             this.setState({
                 firstCard: {...img, faceUp:true}
-            }) 
+            })
         } else if(this.state.firstCard){
             this.setState({
                 secondCard: {...img, faceUp:true},
@@ -24,9 +24,8 @@ export default class CardList extends Component {
     }
 
     componentDidUpdate= () => {
-        if (this.state.firstCard && this.state.secondCard) 
+        if (this.state.firstCard && this.state.secondCard)
         this.compareCards()
-        
     }
 
     handleFaceUp = (images, card) => {
@@ -64,7 +63,7 @@ export default class CardList extends Component {
     winner = () => {
         if (this.state.matchedPairs.length  === 12){
            setTimeout(() => {this.props.redirect('winner')}, 20)
-        } 
+        }
     }
 
     render() {
