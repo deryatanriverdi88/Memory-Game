@@ -7,7 +7,8 @@ export default class CardList extends Component {
         firstCard: null, 
         secondCard: null,
         images: [...this.props.images],
-        matchedPairs: []
+        matchedPairs: [],
+        moves: 0
     }
 
     choosenCards = (img) => {
