@@ -24,16 +24,14 @@
 					  C20 90, 80 90, 85 50"
 				id="curve-2"/>
 	<text x="5" fill="red" stroke="black" class="first">
-		<textpath xlink:href="#curve">
+		<textPath xlink:href="#curve">
 		  Total Recall
-		</textpath>
-		
+		</textPath>
 	</text>
-	
 	<text x="5" fill="red" stroke="black" class="second">
-		<textpath xlink:href="#curve-2">
+		<textPath xlink:href="#curve-2">
 		 Total Recall
-		</textpath>
+		</textPath>
 
 	</text>
 </svg>
