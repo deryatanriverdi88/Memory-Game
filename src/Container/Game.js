@@ -59,7 +59,7 @@ class Game extends Component {
         </div>
     case "winner":
       return <div >
-          <Winner redirect={this.redirect} />
+          <Winner redirect={this.redirect} moves={this.state.moves} />
       </div>
    }
  }
