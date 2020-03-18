@@ -18,9 +18,9 @@ export default class CardList extends Component {
         } else if(this.state.firstCard){
             this.setState({
                 secondCard: {...img, faceUp:true},
-                moves : this.state.moves + 1
-            })
-        } 
+            },
+            this.props.setMoves())
+        }
     }
 
     componentDidUpdate= () => {
