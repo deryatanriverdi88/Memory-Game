@@ -12,7 +12,6 @@ export default class CardList extends Component {
 
     choosenCards = (img) => {
          if(this.state.firstCard === null){
-            console.log(this.state.firstCard)
             this.setState({
                 firstCard: {...img, faceUp:true}
             }) 
@@ -47,12 +46,10 @@ export default class CardList extends Component {
                 images: newImages,
                 matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id]
             })
-            console.log('match')
         } else {
             this.setState({
                 matchedPairs: [...this.state.matchedPairs]
             })
-            console.log('no match')
         }
         this.clearCards()
     }
@@ -71,7 +68,6 @@ export default class CardList extends Component {
     }
 
     render() {
-        console.log(this.state.moves)
         return (
             <>
             <div style={{"width":"100%", "color":"white"}}>
