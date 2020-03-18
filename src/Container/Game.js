@@ -55,8 +55,7 @@ class Game extends Component {
    switch (this.state.gameStatus){
     case "play":
       return <div className="cards">
-          <CardList images={images} redirect={this.redirect}
-          timer={this.state.timer} setMoves={ this.setMoves}  moves={this.state.moves}/>
+          <CardList images={images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves}/>
         </div>
     case "winner":
       return <div >
