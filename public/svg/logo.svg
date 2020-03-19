@@ -1,4 +1,5 @@
-<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill='none' width="50%" height="50%">
+
+<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50%" height="50%">
     <style>
         svg{
             fill: none;
@@ -21,14 +22,14 @@
 	<path d="M25 50,
 					 C25 10, 80 10, 75 50" id="curve"/> 
 	<path d="M15 50,
-					  C20 90, 80 90, 85 50"
-				id="curve-2"/>
-	<text x="5" fill="red" stroke="black" class="first">
+			C20 90, 80 90, 85 50"
+		  id="curve-2"/>
+	<text x="2" class="first">
 		<textPath xlink:href="#curve">
 		  Total Recall
 		</textPath>
 	</text>
-	<text x="5" fill="red" stroke="black" class="second">
+	<text x="0"  class="second">
 		<textPath xlink:href="#curve-2">
 		 Total Recall
 		</textPath>
