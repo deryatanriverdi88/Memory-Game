@@ -5,7 +5,7 @@ import Game from "./Container/Game"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Memory Game</header>
+      <header className="App-header">Total Recall</header>
       <Game/>
     </div>
   );
