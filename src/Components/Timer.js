@@ -25,7 +25,7 @@ export default class Timer extends Component {
     render() {
         return (
             <div className="timer">
-                {this.props.gameStatus === "play"  ? <h1>Time : {this.state.timer}</h1> : <h1> Your time was : {this.state.timer} </h1>}
+                {this.props.gameStatus === "play"  ? <h1>Time : {this.props.timer}</h1> : <h1> Your time was : {this.props.timer} </h1>}
             </div>
         )
     }
