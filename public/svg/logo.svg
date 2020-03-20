@@ -3,6 +3,7 @@
     <style>
         svg{
             fill: none;
+            margin: 1rem;
         }
 
         text{
