@@ -35,14 +35,22 @@ const images= shuffleArray(newObjects)
 
 class Game extends Component {
  state = {
-   gameStatus: "play", 
-   moves: 0
+   gameStatus: "play",
+   moves: 0,
  }
 
  redirect = (page) => {
-  this.setState({
+  if (this.state.gameStatus === 'winner'){
+    this.setState({
+        gameStatus: page,
+        moves: 0
+    })
+  }
+  else {
+    this.setState({
       gameStatus: page
-  })
+    })
+  }
  }
 
  setMoves = () => {
@@ -67,7 +75,7 @@ class Game extends Component {
  render() {   
   return(
    <div className="game">
-         <Timer  gameStatus={this.state.gameStatus}/>
+         <Timer  gameStatus={this.state.gameStatus} />
          {this.renderGame()}
    </div>
     )

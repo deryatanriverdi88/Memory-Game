@@ -10,10 +10,6 @@ export default class Timer extends Component {
               1000
         );
 
-    stop = () => {
-        clearInterval(this.start)
-    }
-
     componentDidMount= () =>{
         if(this.props.gameStatus === "play"){
             return this.start
@@ -29,7 +25,7 @@ export default class Timer extends Component {
     render() {
         return (
             <div className="timer">
-                {this.props.gameStatus === "play"  ? <h1>Time : {this.state.timer}</h1> : <h1> Your time was : {this.state.timer} </h1>}
+                {this.props.gameStatus === "play"  ? <h1>Time : {this.state.timer} seconds</h1> : <h1> Your time was : {this.state.timer} seconds</h1>}
             </div>
         )
     }
