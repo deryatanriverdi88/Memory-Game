@@ -59,9 +59,18 @@ componentDidUpdate= () => {
 }
 
  redirect = (page) => {
-  this.setState({
+  if (this.state.gameStatus === 'winner'){
+    this.setState({
+        gameStatus: page,
+        moves: 0,
+        timer: 0
+    })
+  }
+  else {
+    this.setState({
       gameStatus: page
-  })
+    })
+  }
  }
 
  setMoves = () => {
