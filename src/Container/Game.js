@@ -37,33 +37,13 @@ class Game extends Component {
  state = {
    gameStatus: "winner", // need to change this back to play
    moves: 0,
-   timer: 0
  }
-
- start =
- setInterval(
-     () => this.setState({ timer: this.state.timer + 1}),
-       1000
- );
-
-componentDidMount= () =>{
- if(this.state.gameStatus === "play"){
-     return this.start
-  }
-}
-
-componentDidUpdate= () => {
- if(this.state.gameStatus ==="winner"){
-     clearInterval(this.start)
- }
-}
 
  redirect = (page) => {
   if (this.state.gameStatus === 'winner'){
     this.setState({
         gameStatus: page,
-        moves: 0,
-        timer: 0
+        moves: 0
     })
   }
   else {
@@ -95,7 +75,7 @@ componentDidUpdate= () => {
  render() {   
   return(
    <div className="game">
-         <Timer  gameStatus={this.state.gameStatus} timer={this.state.timer}/>
+         <Timer  gameStatus={this.state.gameStatus} />
          {this.renderGame()}
    </div>
     )
