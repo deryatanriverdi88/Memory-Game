@@ -7,7 +7,8 @@ export default function Winner({redirect, moves }) {
             <h1>
                 You Won!!!!  
             </h1>
-            <button onClick={()=> redirect('play')}>Reset</button>
+            <img src="../images/happy.gif" /> 
+            <button className='button' onClick={()=> redirect('play')}>Reset</button>
         </div>
     )
 }
