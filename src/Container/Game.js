@@ -35,8 +35,9 @@ const images= shuffleArray(newObjects)
 
 class Game extends Component {
  state = {
-   gameStatus: "play", 
-   moves: 0
+   gameStatus: "winner", // need to change this back to play
+   moves: 0,
+   timer: 0
  }
 
  redirect = (page) => {
