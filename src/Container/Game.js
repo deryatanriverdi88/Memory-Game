@@ -40,6 +40,24 @@ class Game extends Component {
    timer: 0
  }
 
+ start =
+ setInterval(
+     () => this.setState({ timer: this.state.timer + 1}),
+       1000
+ );
+
+componentDidMount= () =>{
+ if(this.state.gameStatus === "play"){
+     return this.start
+  }
+}
+
+componentDidUpdate= () => {
+ if(this.state.gameStatus ==="winner"){
+     clearInterval(this.start)
+ }
+}
+
  redirect = (page) => {
   this.setState({
       gameStatus: page
