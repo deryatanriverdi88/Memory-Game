@@ -54,6 +54,6 @@ img.front{
   margin-top:25px;
 }
 
-.timer, .moves{
+.timer, .moves, .winner{
   color: #000080;
 }
