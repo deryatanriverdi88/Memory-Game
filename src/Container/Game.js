@@ -95,7 +95,7 @@ componentDidUpdate= () => {
  render() {   
   return(
    <div className="game">
-         <Timer  gameStatus={this.state.gameStatus}/>
+         <Timer  gameStatus={this.state.gameStatus} timer={this.state.timer}/>
          {this.renderGame()}
    </div>
     )
