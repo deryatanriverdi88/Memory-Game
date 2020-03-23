@@ -73,6 +73,67 @@ componentDidMount =() => {
     })
  }
 
+ choosenCards = (img) => {
+  if(this.state.firstCard === null){
+     this.setState({
+         firstCard: {...img, faceUp:true}
+     })
+ } else if(this.state.firstCard){
+     this.setState({
+         secondCard: {...img, faceUp:true},
+     },
+     this.setMoves())
+ }
+}
+
+componentDidUpdate= () => {
+    if (this.state.firstCard && this.state.secondCard)
+    this.compareCards()
+}
+
+handleFaceUp = (images, card) => {
+   return images.map(image => {
+        if (image.id === card.id) {
+           return card
+        } else {
+            return image
+        }
+    })
+}
+
+compareCards = () => {
+    if(this.state.firstCard.id ===  this.state.secondCard.id){
+        const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
+        this.setState({
+            images: newImages,
+            matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id]
+        })
+    } else {
+        this.setState({
+            matchedPairs: [...this.state.matchedPairs]
+        })
+    }
+    this.clearCards()
+}
+
+clearCards = () => {
+ this.setState({
+     firstCard: null,
+     secondCard: null
+ })
+}
+
+winner = () => {
+ if (this.state.matchedPairs.length  === 12){
+    setTimeout(() => {this.redirect('winner')}, 20)
+ }
+}
+
+resetGame = () => {
+  this.redirect('play') 
+  this.setCards(newObjects)
+}
+
  renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
