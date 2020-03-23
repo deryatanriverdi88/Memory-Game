@@ -22,8 +22,12 @@ let newObjects = [...imgs,...imgs]
 
 class Game extends Component {
  state = {
-   gameStatus: "play",
-   moves: 0,
+  gameStatus: "play",
+  moves: 0,
+  images: [],
+  firstCard: null,
+  secondCard: null,
+  matchedPairs: []
  }
 
  redirect = (page) => {
