@@ -67,11 +67,12 @@ img.front{
 .button{
     display: block;
     margin: 10px auto;
-    width: 14%;
+    width: 30%;
     height: 5vh;
     font-size: inherit;
     font-family: 'Special Elite', cursive;
     font-weight: bold;
+    background: #dbdada;
 }
 
 @media screen and (min-width: 300px){
