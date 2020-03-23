@@ -30,7 +30,7 @@ const imgs =[
 ];
 
 let newObjects = [...imgs,...imgs]
-const images= shuffleArray(newObjects)
+// const images= shuffleArray(newObjects)
 // const images= newObjects
 
 class Game extends Component {
