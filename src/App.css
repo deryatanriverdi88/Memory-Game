@@ -108,7 +108,7 @@ img.front{
 
 @media screen and (min-width: 700px){
   .cards{
-    width: 90%;
+   /*width: 100%;*/
   }
 
 .card{
@@ -159,7 +159,7 @@ img.back{
 
 @media screen and (min-width: 1000px){
 .cards{
-  width: 100%;
+ /*width: 100%;*/
 }
 
 .card{
