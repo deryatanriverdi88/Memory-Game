@@ -62,9 +62,8 @@ class Game extends Component {
  renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
-      return <div className="cards">
-          <CardList images={images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves}/>
-        </div>
+      return <CardList images={images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves}/>
+   
     case "winner":
       return <div >
           <Winner redirect={this.redirect} moves={this.state.moves} />
