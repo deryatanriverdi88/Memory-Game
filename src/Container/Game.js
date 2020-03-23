@@ -3,17 +3,6 @@ import CardList from '../Components/CardList';
 import Winner from '../Components/Winner'
 import Timer from '../Components/Timer'
 
-// const shuffleArray = (array)=> {
-//   let i = array.length - 1;
-//   for (; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     const temp = array[i];
-//     array[i] = array[j];
-//     array[j] = temp;
-//   }
-//   return array;
-// }
-
 const imgs =[
   {id:1,url:'../images/apple.png', faceUp:false},
   {id:2 ,url:'../images/facebook.png', faceUp:false},
@@ -30,8 +19,6 @@ const imgs =[
 ];
 
 let newObjects = [...imgs,...imgs]
-// const images= shuffleArray(newObjects)
-// const images= newObjects
 
 class Game extends Component {
  state = {
