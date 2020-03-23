@@ -22,7 +22,7 @@ let newObjects = [...imgs,...imgs]
 
 class Game extends Component {
  state = {
-  gameStatus: "winner",
+  gameStatus: "play",
   moves: 0,
   images: [],
   firstCard: null,
