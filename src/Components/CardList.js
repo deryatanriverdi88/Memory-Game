@@ -73,9 +73,11 @@ export default class CardList extends Component {
                 <h1 className="moves">Moves: {this.props.moves}</h1>
             </div>
             {this.winner()}
+            <div className="cards">
             {this.state.images.map((img, index )=>{
                 return <Card img={img} key={index} choosenCards={this.choosenCards} matchedPairs={this.state.matchedPairs}/>
             })}
+            </div>
         </>
         )
     }
