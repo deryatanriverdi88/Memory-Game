@@ -36,12 +36,12 @@ body{
 }
 
 .card{
-  width: 13%;
-  height:15vh;
-  float: left;
+  width: 15%;
+  height:18vh;
+  display: inline-block;
   background: #da5e73;
-  margin-bottom: 35px;
-  margin-left: 20px;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
   border-radius: 40px;
 }
 
