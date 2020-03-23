@@ -15,7 +15,7 @@ export default class CardFront extends Component {
         return (
             <div className="card ">
                  <img className="front"
-                      src={img.url} alt={`${img}`} /> 
+                    src={img.url} alt={`${img.url}`} />
             </div>
         )
     }
