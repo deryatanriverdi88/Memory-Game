@@ -9,13 +9,13 @@
 }
 
 .App-header {
-  background-color: #84cce4;
-  min-height: 150vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(20px + 2vmin);
+  font-size: 3rem;
   color: #000080;
-  padding-top: 50px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
 }
 
 .game{
