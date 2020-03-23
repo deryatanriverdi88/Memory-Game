@@ -53,8 +53,8 @@ img.back{
 
 img.front{
   width: 70%;
-  height: auto;
-  margin-top:25px;
+  height: 70%;
+  margin-top:15px;
 }
 
 .timer h1, .moves, .winner{
