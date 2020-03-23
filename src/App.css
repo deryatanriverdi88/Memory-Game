@@ -40,11 +40,10 @@ body{
 .card{
   width: 15%;
   height:18vh;
-  display: inline-block;
   background: #da5e73;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-  border-radius: 40px;
+  border-radius: 10px;
+  border: 1px solid white;
+  float:left;
 }
 
 img.back{
