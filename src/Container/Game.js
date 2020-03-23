@@ -33,8 +33,10 @@ class Game extends Component {
  redirect = (page) => {
   if (this.state.gameStatus === 'winner'){
     this.setState({
+        images: [],
         gameStatus: page,
-        moves: 0
+        moves: 0,
+        matchedPairs:[]
     })
   }
   else {
