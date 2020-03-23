@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Winner({redirect, moves }) {
+export default function Winner({moves, resetGame }) {
+
     return (
         <div className="winner" >
             <h1 className="moves" > Moves : {moves}</h1>
@@ -8,7 +9,7 @@ export default function Winner({redirect, moves }) {
                 You Won!!!!  
             </h1>
             <img src="../images/happy.gif" /> 
-            <button className='button' onClick={()=> redirect('play')}>Reset</button>
+            <button className='button' onClick={()=> resetGame()}>Reset</button>
         </div>
     )
 }

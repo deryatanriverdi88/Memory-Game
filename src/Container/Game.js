@@ -3,17 +3,6 @@ import CardList from '../Components/CardList';
 import Winner from '../Components/Winner'
 import Timer from '../Components/Timer'
 
-const shuffleArray = (array)=> {
-  let i = array.length - 1;
-  for (; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
-
 const imgs =[
   {id:1,url:'../images/apple.png', faceUp:false},
   {id:2 ,url:'../images/facebook.png', faceUp:false},
@@ -30,20 +19,24 @@ const imgs =[
 ];
 
 let newObjects = [...imgs,...imgs]
-const images= shuffleArray(newObjects)
-// const images= newObjects
 
 class Game extends Component {
  state = {
-   gameStatus: "play",
-   moves: 0,
+  gameStatus: "play",
+  moves: 0,
+  images: [],
+  firstCard: null,
+  secondCard: null,
+  matchedPairs: []
  }
 
  redirect = (page) => {
   if (this.state.gameStatus === 'winner'){
     this.setState({
+        images: [],
         gameStatus: page,
-        moves: 0
+        moves: 0,
+        matchedPairs:[]
     })
   }
   else {
@@ -52,6 +45,27 @@ class Game extends Component {
     })
   }
  }
+ 
+ shuffleImages = (array)=> {
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+setCards = () => {
+  this.setState({
+    images: this.shuffleImages(newObjects)
+  })
+}
+
+componentDidMount =() => {
+  this.setCards()
+}
 
  setMoves = () => {
     this.setState({
@@ -59,19 +73,79 @@ class Game extends Component {
     })
  }
 
+ choosenCards = (img) => {
+  if(this.state.firstCard === null){
+     this.setState({
+         firstCard: {...img, faceUp:true}
+     })
+ } else if(this.state.firstCard){
+     this.setState({
+         secondCard: {...img, faceUp:true},
+     },
+     this.setMoves())
+ }
+}
+
+componentDidUpdate= () => {
+    if (this.state.firstCard && this.state.secondCard)
+    this.compareCards()
+}
+
+handleFaceUp = (images, card) => {
+   return images.map(image => {
+        if (image.id === card.id) {
+           return card
+        } else {
+            return image
+        }
+    })
+}
+
+compareCards = () => {
+    if(this.state.firstCard.id ===  this.state.secondCard.id){
+        const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
+        this.setState({
+            images: newImages,
+            matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id]
+        })
+    } else {
+        this.setState({
+            matchedPairs: [...this.state.matchedPairs]
+        })
+    }
+    this.clearCards()
+}
+
+clearCards = () => {
+ this.setState({
+     firstCard: null,
+     secondCard: null
+ })
+}
+
+winner = () => {
+ if (this.state.matchedPairs.length  === 12){
+    setTimeout(() => {this.redirect('winner')}, 20)
+ }
+}
+
+resetGame = () => {
+  this.redirect('play') 
+  this.setCards(newObjects)
+}
+
  renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
-      return <CardList images={images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves}/>
-   
+      return <CardList images={this.state.images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner}/>
     case "winner":
       return <div >
-          <Winner redirect={this.redirect} moves={this.state.moves} />
+          <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} />
       </div>
    }
  }
-
- render() {   
+ 
+ render() {
   return(
    <div className="game">
          <Timer  gameStatus={this.state.gameStatus} />
