@@ -144,8 +144,8 @@ resetGame = () => {
       </div>
    }
  }
-
- render() {   
+ 
+ render() {
   return(
    <div className="game">
          <Timer  gameStatus={this.state.gameStatus} />
