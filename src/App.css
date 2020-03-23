@@ -18,6 +18,10 @@
   font-weight: bold;
 }
 
+body{
+  background-color: #84cce4;
+}
+
 .game{
   position: absolute;
   top: 10rem;
