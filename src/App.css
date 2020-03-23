@@ -60,6 +60,10 @@ img.front{
   font-size: 2rem;
 }
 
+.winner img{
+  width: 60%;
+}
+
 .button{
     display: block;
     margin: 10px auto;
