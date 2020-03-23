@@ -99,124 +99,132 @@ img.front{
 }
 
 @media screen and (min-width: 560px){
-.card{
-  width: 15%;
-  height: 18vh;
-}
+  .cards{
+    width: 80%;
+  }
+
+  .card{
+    width: 16.5%;
+    height: 19vh;
+  }
 }
 
 @media screen and (min-width: 700px){
-  .cards{
-   /*width: 100%;*/
+  .card{
+    width: 12.5%;
+    height: 25vh;
   }
-
-.card{
-  width: 12%;
-  height: 25vh;
-}
 }
 
 @media screen and (min-width: 760px){
-.card{
-  width: 20%;
-  height: 15vh;
-}
+  .card{
+    width: 20%;
+    height: 15vh;
+  }
 }
 
 @media screen and (min-width: 800px){
-.card{
-  width: 12%;
-  height: 25vh;
-}
-
-.game{
-  top: 3rem;
-}
-
-img.back{
-   height: 100%;
-}
-
-.timer h1, .moves, .winner{
- font-size: 1.3rem;
-}
+  .card{
+    width: 12.5%;
+    height: 25vh;
+  }
 }
 
 @media screen and (min-height: 1000px){
-.App-header{
-  font-size: 3rem;
-}
+  .App-header{
+    font-size: 3rem;
+  }
 
-.game{
-  top: 5rem;
-}
-.card{
-  width: 20%;
-  height: 14vh;
-}
+  .game{
+    top: 5rem;
+  }
+
+  .card{
+    width: 25%;
+    height: 14vh;
+  }
+
+  .timer h1, .moves, .winner{
+    font-size: 2rem;
+  }
 }
 
 @media screen and (min-width: 1000px){
-.cards{
- /*width: 100%;*/
-}
+  .App-header{
+    font-size: 2rem;
+  }
 
-.card{
- width: 15%;
- height: 20vh;
-}
+  .game{
+    top: 3rem;
+  }
+  .card{
+    width: 16.5%;
+    height: 20vh;
+  }
 }
 
 @media screen and (min-width: 1336px){
-.App-header{
-  font-size:2rem;
-  height: 2rem;
+  .cards{
+    width: 70%;
+  }
+
+  .card{
+    height: 21vh;
+  }
+
+  .timer h1, .moves, .winner{
+    font-size: 1.5rem;
+  }
 }
 
-.card{
-  width: 15%;
-  height: 21vh;
-}
+@media screen and (min-width: 1366px){
+    .game{
+      top: 3rem;
+    }
 }
 
 @media screen and (min-height: 1300px){
-.card{
-  width: 20%;
-  height: 15vh;
+  .card{
+    width: 25%;
+    height: 15vh;
+  }
 }
+
+@media screen and (min-width: 1400px){
+    .cards{
+      width:50%;
+    }
+
+    .card{
+      width: 25%;
+      height: 15.2vh;
+    }
 }
 
 @media screen and (min-width: 2000px){
- .App-header{
-   font-size:3.5rem;
-   height: 2rem;
- }
+  .App-header{
+    font-size:3.5rem;
+  }
 
- .game{
-   top: 5rem;
- }
+  .game{
+    top: 5rem;
+  }
 
- .timer h1, .moves, .winner{
-   font-size: 2rem;
- }
-
- .card{
-   width: 15%;
-   height: 22vh;
- }
+  .timer h1, .moves, .winner{
+    font-size: 2.2rem;
+  }
 }
 
 @media screen and (min-width: 3000px){
-.App-header{
-  font-size:5.5rem;
-  height: 2rem;
-}
+  .App-header{
+    font-size:9rem;
+  }
 
-.timer h1, .moves, .winner{
-  font-size: 3.5rem;
-}
+  .timer h1, .moves, .winner{
+    font-size: 4rem;
+  }
 
-.game{
-  top: 10rem;
-}
+  .game{
+    top: 10rem;
+  }
 }
