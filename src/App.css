@@ -56,8 +56,9 @@ img.front{
   margin-top:25px;
 }
 
-.timer, .moves, .winner{
+.timer h1, .moves, .winner{
   color: #000080;
+  font-size: 2rem;
 }
 
 .button{
