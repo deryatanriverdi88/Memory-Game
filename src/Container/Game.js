@@ -45,6 +45,27 @@ class Game extends Component {
     })
   }
  }
+ 
+ shuffleImages = (array)=> {
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+setCards = () => {
+  this.setState({
+    images: this.shuffleImages(newObjects)
+  })
+}
+
+componentDidMount =() => {
+  this.setCards()
+}
 
  setMoves = () => {
     this.setState({
