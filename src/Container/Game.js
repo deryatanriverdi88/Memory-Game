@@ -73,6 +73,12 @@ setCards = () => {
 }
 //
 
+start=
+  setInterval(
+      () => this.setState({ timer:( this.state.timer + 1)}),
+        1000
+  );
+
 componentDidMount =() => {
   this.setCards()
 }
@@ -158,7 +164,9 @@ resetGame = () => {
  render() {
   return(
    <div className="game">
-         <Timer  gameStatus={this.state.gameStatus} />
+         <div className='timer'>
+         {this.state.gameStatus === "play"  ?  <h3>  Time : {this.state.timer} seconds</h3> : <h3> Your time was : {this.state.winTime} seconds</h3>}
+         </div>
          {this.renderGame()}
    </div>
     )
