@@ -116,6 +116,7 @@ componentDidUpdate= () => {
 }
 //
 
+// Sorts through the images array and replaces an image's faceUp value false with true, and returns a new array.
 handleFaceUp = (images, card) => {
    return images.map(image => {
         if (image.id === card.id) {
@@ -126,6 +127,20 @@ handleFaceUp = (images, card) => {
     })
 }
 
+// Sets the state of firstCard and secondCard to null.
+clearCards = () => {
+ this.setState({
+     firstCard: null,
+     secondCard: null
+ })
+} 
+
+// Compares the firstCard and secondCard, if their id's are same,
+// runs the handleFaceup function, and sets the state of images with 
+// the new array that is returned by handleFaceup func. ,
+// then sets the matchedPairs with the firstCard id. 
+// If their id's are not same, it returns old matchedPairs. 
+// At the end runs the clearCards function.
 compareCards = () => {
     if(this.state.firstCard.id ===  this.state.secondCard.id){
         const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
@@ -140,6 +155,7 @@ compareCards = () => {
     }
     this.clearCards()
 }
+//
 
 clearCards = () => {
  this.setState({
