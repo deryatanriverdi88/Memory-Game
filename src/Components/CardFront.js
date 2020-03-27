@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class CardFront extends Component {
 
     componentDidUpdate = () =>{
-        if (this.props.img.faceUp ===true){
+        if (this.props.img.faceUp === true){
             return
         } else {
             this.props.reverseCard()

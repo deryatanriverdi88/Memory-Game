@@ -12,7 +12,7 @@ export default class CardList extends Component {
             {this.props.winner()}
             <div className="cards">
             {this.props.images.map((img, index )=>{
-                return <Card img={img} key={index} choosenCards={this.props.choosenCards}/>
+                return <Card img={img} key={index} choosenCards={this.props.choosenCards} firstCard={this.props.firstCard} />
             })}
             </div>
         </>

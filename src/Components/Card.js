@@ -16,11 +16,12 @@ export default class Card extends Component {
     }
    
     reverseCard = () => {
-        setTimeout(()=> {
-            this.setState({
-                cardFaceUp: false
-            })
-        }, 500)
+        if (!this.props.firstCard)
+            setTimeout(()=> {
+                this.setState({
+                    cardFaceUp: false
+                })
+            }, 500)
     }
 
     render() {

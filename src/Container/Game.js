@@ -27,26 +27,35 @@ class Game extends Component {
   images: [],
   firstCard: null,
   secondCard: null,
-  matchedPairs: []
+  matchedPairs: [],
+  timer: 0,
+  winTime: null
  }
 
  redirect = (page) => {
   if (this.state.gameStatus === 'winner'){
-    this.setState({
+    this.setState(prevState => {
+      return {
         images: [],
         gameStatus: page,
         moves: 0,
-        matchedPairs:[]
+        matchedPairs:[],
+        timer: 0,
+      }
     })
   }
   else {
-    this.setState({
-      gameStatus: page
+    this.setState(prevState =>{
+      return  {gameStatus: page,
+      winTime: prevState.timer
+      }
     })
   }
- }
- 
- shuffleImages = (array)=> {
+}
+
+// handles random images for game start
+
+shuffleImages = (array)=> {
   let i = array.length - 1;
   for (; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -62,6 +71,13 @@ setCards = () => {
     images: this.shuffleImages(newObjects)
   })
 }
+//
+
+start=
+  setInterval(
+      () => this.setState({ timer:( this.state.timer + 1)}),
+        1000
+  );
 
 componentDidMount =() => {
   this.setCards()
@@ -132,23 +148,26 @@ winner = () => {
 resetGame = () => {
   this.redirect('play') 
   this.setCards(newObjects)
+
 }
 
- renderGame = () => {
+renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
-      return <CardList images={this.state.images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner}/>
+      return <CardList images={this.state.images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
     case "winner":
       return <div >
           <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} />
       </div>
    }
- }
- 
+}
+
  render() {
   return(
    <div className="game">
-         <Timer  gameStatus={this.state.gameStatus} />
+         <div className='timer'>
+         {this.state.gameStatus === "play"  ?  <h3>  Time : {this.state.timer} seconds</h3> : <h3> Your time was : {this.state.winTime} seconds</h3>}
+         </div>
          {this.renderGame()}
    </div>
     )
