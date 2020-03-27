@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import CardList from '../Components/CardList';
 import Winner from '../Components/Winner'
-import Timer from '../Components/Timer'
 
 const imgs =[
   {id:1,url:'../images/apple.png', faceUp:false},
