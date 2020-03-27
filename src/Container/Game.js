@@ -157,18 +157,15 @@ compareCards = () => {
 }
 //
 
-clearCards = () => {
- this.setState({
-     firstCard: null,
-     secondCard: null
- })
-}
-
+// Checks the length of matchedPairs array, if it equals to 12, 
+// and runs the redirect function.
 winner = () => {
  if (this.state.matchedPairs.length  === 12){
-    setTimeout(() => {this.redirect('winner')}, 20)
+    // setTimeout(() => {this.redirect('winner')}, 20)
+    this.redirect('winner')
  }
 }
+//
 
 resetGame = () => {
   this.redirect('play') 
