@@ -8,6 +8,8 @@ export default class Card extends Component {
         cardFaceUp: false
     }
    
+    // Changes cardFaceup to true and switches CardBack to CardFront.
+    // and runs choosenCards for the img.
     flipOneCard = (img) => {
         this.setState({
             cardFaceUp: true
