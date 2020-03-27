@@ -57,7 +57,7 @@ class Game extends Component {
 }
 //
 
-
+// Shuffles the images.
 shuffleImages = (array)=> {
   let i = array.length - 1;
   for (; i > 0; i--) {
@@ -69,6 +69,7 @@ shuffleImages = (array)=> {
   return array;
 }
 
+// Sets the state with shuffled images.
 setCards = () => {
   this.setState({
     images: this.shuffleImages(newObjects)
