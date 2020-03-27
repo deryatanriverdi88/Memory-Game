@@ -16,15 +16,20 @@ export default class Card extends Component {
         })
         this.props.choosenCards(img)
     }
-   
+    //
+
+    // Checks to see if there is a firstCard, and if not it switches CardFront to CardBack.
+    // we want to find a way to stop a third card from being clicked. 
+    // for now we are setting a shorter time out.
     reverseCard = () => {
         if (!this.props.firstCard)
             setTimeout(()=> {
                 this.setState({
                     cardFaceUp: false
                 })
-            }, 500)
+            }, 250)
     }
+    //
 
     render() {
        const {img} = this.props
