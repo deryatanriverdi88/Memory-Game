@@ -19,4 +19,3 @@ export default class CardList extends Component {
         )
     }
 }
-
