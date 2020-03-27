@@ -176,14 +176,13 @@ resetGame = () => {
 }
 //
 
+// Renders the CardList or Winner component based on gameStatus.
 renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
-      return <CardList images={this.state.images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
+      return <CardList images={this.state.images} moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
     case "winner":
-      return <div >
-          <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} />
-      </div>
+      return <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} />
    }
 }
 
