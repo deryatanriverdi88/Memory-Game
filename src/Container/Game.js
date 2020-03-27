@@ -51,9 +51,11 @@ class Game extends Component {
       }
     })
   }
- }
- 
- shuffleImages = (array)=> {
+}
+
+// handles random images for game start
+
+shuffleImages = (array)=> {
   let i = array.length - 1;
   for (; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -69,6 +71,7 @@ setCards = () => {
     images: this.shuffleImages(newObjects)
   })
 }
+//
 
 componentDidMount =() => {
   this.setCards()
