@@ -87,12 +87,14 @@ componentDidMount =() => {
 }
 //
 
+// Callback to choosenCards function that counts the moves.
  setMoves = () => {
     this.setState({
       moves : this.state.moves + 1
     })
  }
 
+// It selects first and second card and sets the state, and faceUp value to true. And runs the setMoves function.
  choosenCards = (img) => {
   if(this.state.firstCard === null){
      this.setState({
@@ -105,6 +107,7 @@ componentDidMount =() => {
      this.setMoves())
  }
 }
+//
 
 componentDidUpdate= () => {
     if (this.state.firstCard && this.state.secondCard)
