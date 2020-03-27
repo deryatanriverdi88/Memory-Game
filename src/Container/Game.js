@@ -34,16 +34,21 @@ class Game extends Component {
 
  redirect = (page) => {
   if (this.state.gameStatus === 'winner'){
-    this.setState({
+    this.setState(prevState => {
+      return {
         images: [],
         gameStatus: page,
         moves: 0,
-        matchedPairs:[]
+        matchedPairs:[],
+        timer: 0,
+      }
     })
   }
   else {
-    this.setState({
-      gameStatus: page
+    this.setState(prevState =>{
+      return  {gameStatus: page,
+      winTime: prevState.timer
+      }
     })
   }
  }
