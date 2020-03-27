@@ -167,11 +167,14 @@ winner = () => {
 }
 //
 
+// Resets the game by running redirect funtion with play, 
+// sets the  new cards.
 resetGame = () => {
   this.redirect('play') 
   this.setCards(newObjects)
 
 }
+//
 
 renderGame = () => {
    switch (this.state.gameStatus){
