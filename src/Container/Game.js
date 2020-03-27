@@ -27,7 +27,9 @@ class Game extends Component {
   images: [],
   firstCard: null,
   secondCard: null,
-  matchedPairs: []
+  matchedPairs: [],
+  timer: 0,
+  winTime: null
  }
 
  redirect = (page) => {
