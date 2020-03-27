@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CardList from '../Components/CardList';
 import Winner from '../Components/Winner'
 
+// Sets up images before game start.
 const imgs =[
   {id:1,url:'../images/apple.png', faceUp:false},
   {id:2 ,url:'../images/facebook.png', faceUp:false},
@@ -19,6 +20,8 @@ const imgs =[
 
 let newObjects = [...imgs,...imgs]
 
+//
+
 class Game extends Component {
  state = {
   gameStatus: "play",
@@ -31,19 +34,20 @@ class Game extends Component {
   winTime: null
  }
 
+ // Handles the switch between winner and play.
  redirect = (page) => {
   if (this.state.gameStatus === 'winner'){
-    this.setState(prevState => {
-      return {
+    // Switches from winner to play.
+    this.setState({
         images: [],
         gameStatus: page,
         moves: 0,
         matchedPairs:[],
-        timer: 0,
-      }
+        timer: 0
     })
   }
   else {
+     // Switches from play to winner.
     this.setState(prevState =>{
       return  {gameStatus: page,
       winTime: prevState.timer
@@ -51,9 +55,9 @@ class Game extends Component {
     })
   }
 }
+//
 
-// handles random images for game start
-
+// Shuffles the images.
 shuffleImages = (array)=> {
   let i = array.length - 1;
   for (; i > 0; i--) {
@@ -65,6 +69,7 @@ shuffleImages = (array)=> {
   return array;
 }
 
+// Sets the state with shuffled images.
 setCards = () => {
   this.setState({
     images: this.shuffleImages(newObjects)
@@ -72,22 +77,24 @@ setCards = () => {
 }
 //
 
-start=
-  setInterval(
-      () => this.setState({ timer:( this.state.timer + 1)}),
-        1000
-  );
-
+// Starts the game by setting timer and new cards.
 componentDidMount =() => {
+  setInterval(
+    () => this.setState({ timer:( this.state.timer + 1)}),
+      1000
+  );
   this.setCards()
 }
+//
 
+// Callback to choosenCards function that counts the moves.
  setMoves = () => {
     this.setState({
       moves : this.state.moves + 1
     })
  }
 
+// It selects first and second card and sets the state, and faceUp value to true. And runs the setMoves function.
  choosenCards = (img) => {
   if(this.state.firstCard === null){
      this.setState({
@@ -100,12 +107,16 @@ componentDidMount =() => {
      this.setMoves())
  }
 }
+//
 
+// It runs the compareCards function when firstCard and secondCard exist in state.
 componentDidUpdate= () => {
     if (this.state.firstCard && this.state.secondCard)
     this.compareCards()
 }
+//
 
+// Sorts through the images array and replaces an image's faceUp value false with true, and returns a new array.
 handleFaceUp = (images, card) => {
    return images.map(image => {
         if (image.id === card.id) {
@@ -116,6 +127,20 @@ handleFaceUp = (images, card) => {
     })
 }
 
+// Sets the state of firstCard and secondCard to null.
+clearCards = () => {
+ this.setState({
+     firstCard: null,
+     secondCard: null
+ })
+} 
+
+// Compares the firstCard and secondCard, if their id's are same,
+// runs the handleFaceup function, and sets the state of images with 
+// the new array that is returned by handleFaceup func. ,
+// then sets the matchedPairs with the firstCard id. 
+// If their id's are not same, it returns old matchedPairs. 
+// At the end runs the clearCards function.
 compareCards = () => {
     if(this.state.firstCard.id ===  this.state.secondCard.id){
         const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
@@ -130,34 +155,34 @@ compareCards = () => {
     }
     this.clearCards()
 }
+//
 
-clearCards = () => {
- this.setState({
-     firstCard: null,
-     secondCard: null
- })
-}
-
+// Checks the length of matchedPairs array, if it equals to 12, 
+// and runs the redirect function.
 winner = () => {
  if (this.state.matchedPairs.length  === 12){
-    setTimeout(() => {this.redirect('winner')}, 20)
+    // setTimeout(() => {this.redirect('winner')}, 20)
+    this.redirect('winner')
  }
 }
+//
 
+// Resets the game by running redirect funtion with play, 
+// sets the  new cards.
 resetGame = () => {
   this.redirect('play') 
   this.setCards(newObjects)
 
 }
+//
 
+// Renders the CardList or Winner component based on gameStatus.
 renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
-      return <CardList images={this.state.images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
+      return <CardList images={this.state.images} moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
     case "winner":
-      return <div >
-          <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} />
-      </div>
+      return <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} />
    }
 }
 
