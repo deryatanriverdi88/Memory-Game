@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CardList from '../Components/CardList';
 import Winner from '../Components/Winner'
 
+// Sets up images before game start.
 const imgs =[
   {id:1,url:'../images/apple.png', faceUp:false},
   {id:2 ,url:'../images/facebook.png', faceUp:false},
@@ -18,6 +19,8 @@ const imgs =[
 ];
 
 let newObjects = [...imgs,...imgs]
+
+//
 
 class Game extends Component {
  state = {
