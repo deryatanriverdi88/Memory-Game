@@ -19,7 +19,6 @@ const imgs =[
 ];
 
 let newObjects = [...imgs,...imgs]
-
 //
 
 class Game extends Component {
@@ -102,7 +101,7 @@ componentDidMount =() => {
      })
  } else if(this.state.firstCard){
      this.setState({
-         secondCard: {...img, faceUp:true},
+         secondCard: {...img, faceUp:true}
      },
      this.setMoves())
  }
@@ -133,13 +132,13 @@ clearCards = () => {
      firstCard: null,
      secondCard: null
  })
-} 
+}
 
 // Compares the firstCard and secondCard, if their id's are same,
-// runs the handleFaceup function, and sets the state of images with 
-// the new array that is returned by handleFaceup func. ,
-// then sets the matchedPairs with the firstCard id. 
-// If their id's are not same, it returns old matchedPairs. 
+// runs the handleFaceup function, and sets the state of images with
+// the new array that is returned by handleFaceup func.,
+// then sets the matchedPairs with the firstCard id.
+// If their id's are not same, it returns old matchedPairs.
 // At the end runs the clearCards function.
 compareCards = () => {
     if(this.state.firstCard.id ===  this.state.secondCard.id){
@@ -157,7 +156,7 @@ compareCards = () => {
 }
 //
 
-// Checks the length of matchedPairs array, if it equals to 12, 
+// Checks the length of matchedPairs array, if it equals to 12,
 // and runs the redirect function.
 winner = () => {
  if (this.state.matchedPairs.length  === 12){
@@ -167,12 +166,11 @@ winner = () => {
 }
 //
 
-// Resets the game by running redirect funtion with play, 
+// Resets the game by running redirect funtion with play,
 // sets the  new cards.
 resetGame = () => {
   this.redirect('play') 
   this.setCards(newObjects)
-
 }
 //
 
