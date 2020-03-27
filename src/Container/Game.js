@@ -34,19 +34,20 @@ class Game extends Component {
   winTime: null
  }
 
+ // Handles the switch between winner and play.
  redirect = (page) => {
   if (this.state.gameStatus === 'winner'){
-    this.setState(prevState => {
-      return {
+    // Switches from winner to play.
+    this.setState({
         images: [],
         gameStatus: page,
         moves: 0,
         matchedPairs:[],
-        timer: 0,
-      }
+        timer: 0
     })
   }
   else {
+     // Switches from play to winner.
     this.setState(prevState =>{
       return  {gameStatus: page,
       winTime: prevState.timer
@@ -54,8 +55,8 @@ class Game extends Component {
     })
   }
 }
+//
 
-// handles random images for game start
 
 shuffleImages = (array)=> {
   let i = array.length - 1;
