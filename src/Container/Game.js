@@ -109,10 +109,12 @@ componentDidMount =() => {
 }
 //
 
+// It runs the compareCards function when firstCard and secondCard exist in state.
 componentDidUpdate= () => {
     if (this.state.firstCard && this.state.secondCard)
     this.compareCards()
 }
+//
 
 handleFaceUp = (images, card) => {
    return images.map(image => {
