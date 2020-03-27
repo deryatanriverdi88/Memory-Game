@@ -77,15 +77,15 @@ setCards = () => {
 }
 //
 
-start=
-  setInterval(
-      () => this.setState({ timer:( this.state.timer + 1)}),
-        1000
-  );
-
+// Starts the game by setting timer and new cards.
 componentDidMount =() => {
+  setInterval(
+    () => this.setState({ timer:( this.state.timer + 1)}),
+      1000
+  );
   this.setCards()
 }
+//
 
  setMoves = () => {
     this.setState({
