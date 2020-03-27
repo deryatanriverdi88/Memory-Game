@@ -148,19 +148,20 @@ winner = () => {
 resetGame = () => {
   this.redirect('play') 
   this.setCards(newObjects)
+
 }
 
- renderGame = () => {
+renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
-      return <CardList images={this.state.images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner}/>
+      return <CardList images={this.state.images} redirect={this.redirect} setMoves={ this.setMoves}  moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
     case "winner":
       return <div >
           <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} />
       </div>
    }
- }
- 
+}
+
  render() {
   return(
    <div className="game">
