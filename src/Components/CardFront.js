@@ -16,8 +16,8 @@ export default class CardFront extends Component {
     render() {
         const {img} = this.props
         return (
-            <div className="card ">
-                 <img className="front"
+            <div className="card front">
+                 <img
                     src={img.url} alt={`${img.url}`} />
             </div>
         )
