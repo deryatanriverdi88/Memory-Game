@@ -96,7 +96,7 @@ componentDidMount =() => {
      this.setState({
          secondCard: {...img, faceUp:true}
      },
-     this.setMoves())
+     () => this.compareCards())
  }
 }
 //
