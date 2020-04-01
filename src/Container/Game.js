@@ -131,11 +131,13 @@ compareCards = () => {
         const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
         this.setState({
             images: newImages,
-            matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id]
+            matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id],
+            moves: this.state.moves + 1
         })
     } else {
         this.setState({
-            matchedPairs: [...this.state.matchedPairs]
+            matchedPairs: [...this.state.matchedPairs],
+            moves: this.state.moves + 1
         })
     }
     this.clearCards()
