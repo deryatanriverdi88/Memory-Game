@@ -86,13 +86,6 @@ componentDidMount =() => {
 }
 //
 
-// Callback to choosenCards function that counts the moves.
- setMoves = () => {
-    this.setState({
-      moves : this.state.moves + 1
-    })
- }
-
 // It selects first and second card and sets the state, and faceUp value to true. And runs the setMoves function.
  choosenCards = (img) => {
   if(this.state.firstCard === null){
@@ -103,15 +96,8 @@ componentDidMount =() => {
      this.setState({
          secondCard: {...img, faceUp:true}
      },
-     this.setMoves())
+     () => this.compareCards())
  }
-}
-//
-
-// It runs the compareCards function when firstCard and secondCard exist in state.
-componentDidUpdate= () => {
-    if (this.state.firstCard && this.state.secondCard)
-    this.compareCards()
 }
 //
 
@@ -145,11 +131,13 @@ compareCards = () => {
         const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
         this.setState({
             images: newImages,
-            matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id]
+            matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id],
+            moves: this.state.moves + 1
         })
     } else {
         this.setState({
-            matchedPairs: [...this.state.matchedPairs]
+            matchedPairs: [...this.state.matchedPairs],
+            moves: this.state.moves + 1
         })
     }
     this.clearCards()
