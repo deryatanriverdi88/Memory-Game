@@ -10,7 +10,22 @@ export default class Winner extends React.Component {
     this.setState({
         [e.target.name]: e.target.value
     })
-}
+   }
+
+   handleSubmit = (e) => {
+    e.preventDefault()
+    fetch('http://localhost:3000/users', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body:JSON.stringify({
+            username: this.state.username
+        })
+    }).then(res => res.json())
+       .then(console.log('fetch finished'))
+   }
 
     render(){
         const {moves, resetGame} = this.props
