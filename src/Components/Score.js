@@ -11,7 +11,15 @@ export default class Score extends Component {
         }
     }
 
-
+    timeMultiplier = (t) =>{
+        if(t <= 30){
+            return 2
+        } else if(t <= 60){
+            return 1.5
+        } else {
+            return 1
+        }
+    }
 
     render() {
         return (
