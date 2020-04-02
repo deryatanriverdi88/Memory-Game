@@ -14,6 +14,11 @@ export default class Winner extends React.Component {
                     You Won!!!!
                 </h1>
                 <img src="../images/happy.gif"/>
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="username">Your name:</label>
+                    <input id="username" name="username" value={this.state.username} type="text" onChange={(e) => this.handleChange(e)}/>
+                    <input type="submit" id="submit"/>
+                </form>
                 <button className='button' onClick={()=> resetGame()}>Reset</button>
             </div>
         )
