@@ -34,6 +34,10 @@ export default class Score extends Component {
         }
     }
 
+    finalScore = ()=>{
+        return this.basePoints()* this.timeMultiplier(this.props.timer) * this.moveMultiplier(this.props.moves)
+    }
+
     render() {
         return (
             <div>
