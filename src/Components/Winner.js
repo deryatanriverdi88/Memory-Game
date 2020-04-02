@@ -5,6 +5,13 @@ export default class Winner extends React.Component {
        username: ""
    }
 
+   handleChange = (e) => {
+    console.log( e.target.value)
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+}
+
     render(){
         const {moves, resetGame} = this.props
         return (
