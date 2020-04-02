@@ -41,7 +41,7 @@ export default class Score extends Component {
     render() {
         return (
             <div>
-
+                {this.props.gameStatus === "winner" ? this.finalScore() :  this.basePoints()}
             </div>
         )
     }
