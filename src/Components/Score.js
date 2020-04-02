@@ -21,6 +21,19 @@ export default class Score extends Component {
         }
     }
 
+
+    moveMultiplier = (m) =>{
+        if(m === 12){
+            return 10
+        } else if(m <= 20){
+            return 2
+        }else if(m <= 45){
+            return 1.5
+        } else if(m > 45){
+            return 1
+        }
+    }
+
     render() {
         return (
             <div>
