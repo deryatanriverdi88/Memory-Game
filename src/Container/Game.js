@@ -158,6 +158,20 @@ compareCards = () => {
 }
 //
 
+
+
+//
+
+// we want to eventually show players a breakdown of their scores
+// to do that we are going to have to update our math
+//that we can see our point bonuses or multipliers for streak time and moves.
+      /*
+      points: x
+      streak bouns: n
+      time bonus: y
+      move bonus: z
+      */
+
 // Checks the length of matchedPairs array, if it equals to 12,
 // and runs the redirect function.
 winner = () => {
