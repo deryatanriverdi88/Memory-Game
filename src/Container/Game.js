@@ -31,7 +31,10 @@ class Game extends Component {
   secondCard: null,
   matchedPairs: [],
   timer: 0,
-  winTime: null
+  winTime: null,
+  streak:0,
+  score: 0,
+  finalScore: 0
  }
 
  // Handles the switch between winner and play.
