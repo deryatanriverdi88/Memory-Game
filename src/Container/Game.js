@@ -46,14 +46,18 @@ class Game extends Component {
         gameStatus: page,
         moves: 0,
         matchedPairs:[],
-        timer: 0
+        timer: 0,
+        streak: 0,
+        score: 0,
+        finalScore: 0
     })
   }
   else {
      // Switches from play to winner.
     this.setState(prevState =>{
       return  {gameStatus: page,
-      winTime: prevState.timer
+      winTime: prevState.timer,
+      finalScore:  prevState.score + Math.round(((12*12)/ (prevState.timer* prevState.moves)) * 1000)
       }
     })
   }
