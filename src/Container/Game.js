@@ -137,17 +137,23 @@ clearCards = () => {
 compareCards = () => {
     if(this.state.firstCard.id ===  this.state.secondCard.id){
         const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
-        this.setState({
-            images: newImages,
-            matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id],
-            moves: this.state.moves + 1
-        })
+        this.setState(prevState =>{
+           return {
+             images: newImages,
+             matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id],
+             moves: this.state.moves + 1,
+             streak: this.state.streak + 1,
+             score: Math.round(((12*12)/ (prevState.timer*prevState.moves)) * 1000),
+           }
+          })
+          console.log(this.state.streak *10)
     } else {
         this.setState({
             matchedPairs: [...this.state.matchedPairs],
-            moves: this.state.moves + 1
-        })
-    }
+            moves: this.state.moves + 1,
+            streak: 0
+          })
+        }
     this.clearCards()
 }
 //
