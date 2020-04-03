@@ -190,7 +190,7 @@ renderGame = () => {
   return(
    <div className="game">
          <div className='timer'>
-           <Score timer={this.state.timer} moves={this.state.moves} matchedPairs={this.state.matchedPairs} gameStatus={this.state.gameStatus}/>
+           <Score timer={this.state.timer} moves={this.state.moves} gameStatus={this.state.gameStatus} streak={this.state.streak} score={this.state.score} finalScore={this.state.finalScore}/>
          {this.state.gameStatus === "play"  ?  <h1>  Time : {this.state.timer} seconds</h1> : <h1> Your time was : {this.state.winTime} seconds</h1>}
          </div>
          {this.renderGame()}
