@@ -1,47 +1,20 @@
 import React, { Component } from 'react'
 
 export default class Score extends Component {
-
-
-    basePoints = () =>{
-        if (this.props.matchedPairs.length > 0){
-            return this.props.matchedPairs.length * 10
-        } else {
-            return 0
-        }
-    }
-
-    timeMultiplier = (t) =>{
-        if(t <= 30){
-            return 2
-        } else if(t <= 60){
-            return 1.5
-        } else {
-            return 1
-        }
-    }
-
-
-    moveMultiplier = (m) =>{
-        if(m === 12){
-            return 10
-        } else if(m <= 20){
-            return 2
-        }else if(m <= 45){
-            return 1.5
-        } else if(m > 45){
-            return 1
-        }
-    }
-
-    finalScore = ()=>{
-        return this.basePoints()* this.timeMultiplier(this.props.timer) * this.moveMultiplier(this.props.moves)
-    }
-
     render() {
         return (
             <div>
-                {this.props.gameStatus === "winner" ? this.finalScore() :  this.basePoints()}
+                {this.props.gameStatus === "winner" ?
+                    <div>
+                    {/* <p>Your game score was: {this.props.score} </p>  */}
+                    {/* <p> Your final score based on your time and moves is: </p>  */}
+                    <p>{this.props.finalScore}</p>
+                    </div>
+                    :
+                    <>
+                    <p> score: {this.props.score} </p>
+                    <p> current streak: {this.props.streak} </p>
+                    </>}
             </div>
         )
     }

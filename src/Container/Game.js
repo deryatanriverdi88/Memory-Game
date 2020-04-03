@@ -31,7 +31,10 @@ class Game extends Component {
   secondCard: null,
   matchedPairs: [],
   timer: 0,
-  winTime: null
+  winTime: null,
+  streak:0,
+  score: 0,
+  finalScore: 0
  }
 
  // Handles the switch between winner and play.
@@ -43,14 +46,18 @@ class Game extends Component {
         gameStatus: page,
         moves: 0,
         matchedPairs:[],
-        timer: 0
+        timer: 0,
+        streak: 0,
+        score: 0,
+        finalScore: 0
     })
   }
   else {
      // Switches from play to winner.
     this.setState(prevState =>{
       return  {gameStatus: page,
-      winTime: prevState.timer
+      winTime: prevState.timer,
+      finalScore:  prevState.score + Math.round(((12*12)/ (prevState.timer* prevState.moves)) * 1000)
       }
     })
   }
@@ -130,20 +137,40 @@ clearCards = () => {
 compareCards = () => {
     if(this.state.firstCard.id ===  this.state.secondCard.id){
         const newImages= this.handleFaceUp(this.state.images, this.state.firstCard)
-        this.setState({
-            images: newImages,
-            matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id],
-            moves: this.state.moves + 1
-        })
+        this.setState(prevState =>{
+           return {
+             images: newImages,
+             matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id],
+             moves: this.state.moves + 1,
+             streak: this.state.streak + 1,
+             score: Math.round(((12*12)/ (prevState.timer*prevState.moves)) * 1000),
+           }
+          })
+          console.log(this.state.streak *10)
     } else {
         this.setState({
             matchedPairs: [...this.state.matchedPairs],
-            moves: this.state.moves + 1
-        })
-    }
+            moves: this.state.moves + 1,
+            streak: 0
+          })
+        }
     this.clearCards()
 }
 //
+
+
+
+//
+
+// we want to eventually show players a breakdown of their scores
+// to do that we are going to have to update our math
+//that we can see our point bonuses or multipliers for streak time and moves.
+      /*
+      points: x
+      streak bouns: n
+      time bonus: y
+      move bonus: z
+      */
 
 // Checks the length of matchedPairs array, if it equals to 12,
 // and runs the redirect function.
@@ -177,7 +204,7 @@ renderGame = () => {
   return(
    <div className="game">
          <div className='timer'>
-           <Score timer={this.state.timer} moves={this.state.moves} matchedPairs={this.state.matchedPairs} gameStatus={this.state.gameStatus}/>
+           <Score timer={this.state.timer} moves={this.state.moves} gameStatus={this.state.gameStatus} streak={this.state.streak} score={this.state.score} finalScore={this.state.finalScore}/>
          {this.state.gameStatus === "play"  ?  <h1>  Time : {this.state.timer} seconds</h1> : <h1> Your time was : {this.state.winTime} seconds</h1>}
          </div>
          {this.renderGame()}
