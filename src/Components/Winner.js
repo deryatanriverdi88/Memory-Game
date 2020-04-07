@@ -18,18 +18,35 @@ export default class Winner extends React.Component {
 
    handleSubmit = (e) => {
     e.preventDefault()
-    console.log('fetch will happen when backend is completed')
-    // fetch('http://localhost:3000/users', {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         "Accept": "application/json"
-    //     },
-    //     body:JSON.stringify({
-    //         username: this.state.username
-    //     })
-    // }).then(res => res.json())
-    //    .then(console.log('fetch finished'))
+    fetch('http://localhost:3000/users', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body:JSON.stringify({
+            username: this.state.username
+        })
+    }).then(res => res.json())
+      .then(user => {
+      fetch('http://localhost:3000/scores',{
+            method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body:JSON.stringify({
+           score: this.props.finalScore,
+           user_id: user.id
+          })
+        }).then(res=> res.json())
+          .then(score => {
+              this.setState({
+                highScore: true,
+                playerScore: score
+              })
+          })
+      })
    }
 
     render(){
