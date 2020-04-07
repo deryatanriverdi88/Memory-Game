@@ -16,6 +16,13 @@ export default class HighScores extends Component {
         })
     }
 
+    renderHighScores = () => {
+        let i = 1
+        return this.state.highScores.map(score => {
+        return <p key={score.id}>{i++} - {score.user.username} - {score.score}</p>
+        })
+    }
+
     render() {
         return (
             <div>
