@@ -1,8 +1,12 @@
 import React from 'react'
+import HighScores from './HighScores'
 
 export default class Winner extends React.Component {
    state = {
-       username: ""
+       username: "",
+       highScore: false,
+       userId: null,
+       playerScore: null
    }
 
    handleChange = (e) => {
