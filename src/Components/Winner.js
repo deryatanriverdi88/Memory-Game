@@ -49,11 +49,14 @@ export default class Winner extends React.Component {
       })
    }
 
+
     render(){
         const {moves, resetGame} = this.props
         return (
             <div className="winner" >
-                <h1 className="moves" > Moves : {moves}</h1>
+              { !this.state.highScore ?
+              <>
+              <h1 className="moves" > Moves : {moves}</h1>
                 <h1>
                     You Won!!!!
                 </h1>
@@ -64,6 +67,8 @@ export default class Winner extends React.Component {
                     <input id="username" name="username" value={this.state.username} type="text" onChange={(e) => this.handleChange(e)}/>
                     <input type="submit" id="submit"/>
                 </form>
+                </> :
+                <HighScores playerScore={this.state.playerScore}/> }
                 <button className='button' onClick={()=> resetGame()}>Reset</button>
             </div>
         )
