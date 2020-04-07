@@ -26,7 +26,8 @@ export default class HighScores extends Component {
     render() {
         return (
             <div>
-              
+                <h2>Top 10 High Scores</h2>
+                {this.renderHighScores()}
             </div>
         )
     }
