@@ -35,7 +35,7 @@ class Game extends Component {
   streak:0,
   score: 0,
   finalScore: 0
- }
+}
 
  // Handles the switch between winner and play.
  redirect = (page) => {
@@ -57,7 +57,7 @@ class Game extends Component {
     this.setState(prevState =>{
       return  {gameStatus: page,
       winTime: prevState.timer,
-      finalScore:  prevState.score + Math.round(((12*12)/ (prevState.timer* prevState.moves)) * 1000)
+      finalScore:  prevState.score + Math.round(((24*12)/ (prevState.timer* prevState.moves)) * 1000)
       }
     })
   }
@@ -143,7 +143,7 @@ compareCards = () => {
              matchedPairs:[ ...this.state.matchedPairs, this.state.firstCard.id],
              moves: this.state.moves + 1,
              streak: this.state.streak + 1,
-             score: Math.round(((12*12)/ (prevState.timer*prevState.moves)) * 1000),
+             score: prevState.score + 10 + (this.state.streak * 10)
            }
           })
           console.log(this.state.streak *10)
@@ -196,7 +196,7 @@ renderGame = () => {
     case "play":
       return <CardList images={this.state.images} moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
     case "winner":
-      return <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} />
+      return <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} finalScore={this.state.finalScore} />
    }
 }
 
