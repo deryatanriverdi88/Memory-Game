@@ -6,9 +6,9 @@ export default class Score extends Component {
             <div>
                 {this.props.gameStatus === "winner" ?
                     <div>
-                    {/* <p>Your game score was: {this.props.score} </p>  */}
-                    {/* <p> Your final score based on your time and moves is: </p>  */}
-                    <p>{this.props.finalScore}</p>
+                    <p>Score : {this.props.score}</p>
+                    <p>Bonus: {this.props.finalScore - this.props.score }</p>
+                    <p>Total : {this.props.finalScore}</p>
                     </div>
                     :
                     <>
