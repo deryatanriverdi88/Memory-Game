@@ -35,7 +35,7 @@ class Game extends Component {
   streak:0,
   score: 0,
   finalScore: 0
- }
+}
 
  // Handles the switch between winner and play.
  redirect = (page) => {
