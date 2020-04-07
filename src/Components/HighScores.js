@@ -6,6 +6,16 @@ export default class HighScores extends Component {
         highScores: []
     }
 
+    componentDidMount = () => {
+        fetch('http://localhost:3000/scores')
+        .then(res => res.json())
+        .then(scores => {
+           this.setState({
+               highScores:  scores
+           })
+        })
+    }
+
     render() {
         return (
             <div>
@@ -14,4 +24,3 @@ export default class HighScores extends Component {
         )
     }
 }
-
