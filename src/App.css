@@ -53,8 +53,7 @@ body{
 .front img{
   width: 70%;
   height: 70%;
-  margin-top:15px;
-
+  margin-top:15px
 }
 
 .timer h1, .moves, .winner{
