@@ -53,13 +53,19 @@ body{
 .front img{
   width: 70%;
   height: 70%;
-  margin-top:15px;
-
+  margin-top:15px
 }
 
-.timer h1, .moves, .winner{
+.timer, .scoreboard {
+  display: flex;
+  justify-content: center;
+}
+
+.timer p, .scoreboard p, .winner{
   color: #000080;
-  font-size: 2rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-right: 15px;
 }
 
 .winner img{

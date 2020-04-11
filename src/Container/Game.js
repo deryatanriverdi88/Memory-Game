@@ -146,7 +146,6 @@ compareCards = () => {
              score: prevState.score + 10 + (this.state.streak * 10)
            }
           })
-          console.log(this.state.streak *10)
     } else {
         this.setState({
             matchedPairs: [...this.state.matchedPairs],
@@ -203,9 +202,10 @@ renderGame = () => {
  render() {
   return(
    <div className="game">
+          <Score timer={this.state.timer} moves={this.state.moves} gameStatus={this.state.gameStatus} streak={this.state.streak} score={this.state.score} finalScore={this.state.finalScore}/>
          <div className='timer'>
-           <Score timer={this.state.timer} moves={this.state.moves} gameStatus={this.state.gameStatus} streak={this.state.streak} score={this.state.score} finalScore={this.state.finalScore}/>
-         {this.state.gameStatus === "play"  ?  <h1>  Time : {this.state.timer} seconds</h1> : <h1> Your time was : {this.state.winTime} seconds</h1>}
+         {this.state.gameStatus === "play"  ?  <p>  Time : {this.state.timer} </p>  : <p> Your time was : {this.state.winTime} </p>}
+         <p className="moves">Moves: {this.state.moves}</p>
          </div>
          {this.renderGame()}
    </div>
