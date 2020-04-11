@@ -146,7 +146,6 @@ compareCards = () => {
              score: prevState.score + 10 + (this.state.streak * 10)
            }
           })
-          console.log(this.state.streak *10)
     } else {
         this.setState({
             matchedPairs: [...this.state.matchedPairs],
