@@ -60,7 +60,6 @@ export default class Winner extends React.Component {
                 <h1>
                     You Won!!!!
                 </h1>
-                <p>Name : {this.state.username}</p>
                 <img src="../images/happy.gif"/>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="username">Your name:</label>
