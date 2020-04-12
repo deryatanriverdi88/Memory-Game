@@ -12,10 +12,20 @@ export default class HighScores extends Component {
     componentDidMount = () => {
         fetch('http://localhost:3000/scores')
         .then(res => res.json())
-        .then(scores => {
-           this.setState({
-               highScores:  scores
-           })
+        .then(scoresArr =>  {
+            let scores = scoresArr.slice(0,10)
+            if (scores.find(score => score.id === this.props.playerScore.id)) {
+                this.setState({
+                    highScores: scores.slice(0,10)
+                })
+            }
+            else {
+                this.setState({
+                    highScores: scores,
+                    newScores: [...scores, this.props.playerScore],
+                    scoreIndex: scoresArr.findIndex(score => score.id === this.props.playerScore.id)
+                })
+            }
         })
     }
 
