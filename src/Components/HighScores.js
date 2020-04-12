@@ -3,7 +3,10 @@ import React, { Component } from 'react'
 export default class HighScores extends Component {
 
     state = {
-        highScores: []
+        highScores: [],
+        scoreIndex: null,
+        newScores: []
+
     }
 
     componentDidMount = () => {
