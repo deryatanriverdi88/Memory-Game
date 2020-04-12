@@ -31,9 +31,20 @@ export default class HighScores extends Component {
 
     renderHighScores = () => {
         let i = 1
-        return this.state.highScores.map(score => {
-        return <p key={score.id}>{i++} - {score.user.username} - {score.score}</p>
-        })
+        const {playerScore} = this.props
+        if (this.state.newScores.length){
+            return this.state.newScores.map(score => {
+                if (score.id === playerScore.id) {
+                    return <p key={playerScore.id}> {this.state.scoreIndex + 1} - {playerScore.user.username} - {playerScore.score}</p>
+                } else {
+                    return <p key={score.id}>{i++} - {score.user.username} - {score.score}</p>
+                }
+            })
+        } else {
+            return this.state.highScores.map(score => {
+                    return <p key={score.id}>{i++} - {score.user.username} - {score.score}</p>
+                })
+            }
     }
 
     render() {
