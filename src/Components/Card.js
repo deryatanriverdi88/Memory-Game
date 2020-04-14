@@ -27,7 +27,7 @@ export default class Card extends Component {
                 this.setState({
                     cardFaceUp: false
                 })
-            }, 300)
+            }, 500)
     }
     //
 
