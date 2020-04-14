@@ -10,7 +10,7 @@ export default class HighScores extends Component {
     }
 
     componentDidMount = () => {
-        fetch('http://localhost:3000/scores')
+        fetch('https://total-recall-backend.herokuapp.com/scores')
         .then(res => res.json())
         .then(scoresArr =>  {
             let scores = scoresArr.slice(0,10)
