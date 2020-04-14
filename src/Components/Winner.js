@@ -18,7 +18,7 @@ export default class Winner extends React.Component {
 
    handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:3000/users', {
+    fetch('https://total-recall-backend.herokuapp.com/users', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export default class Winner extends React.Component {
         })
     }).then(res => res.json())
       .then(user => {
-      fetch('http://localhost:3000/scores',{
+      fetch('https://total-recall-backend.herokuapp.com/scores',{
             method: "POST",
         headers: {
             "Content-Type": "application/json",
