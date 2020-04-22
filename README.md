@@ -28,6 +28,9 @@ For more information about the api see below:
 
 ## Frontend
 
+Total Recall's frontend is built using React.  The Total Recall logo was created wtih SVG. The game was styled with Responsive CSS to fit most screens and devices.
+
+
 ## Demo 
 
 ## Installation
