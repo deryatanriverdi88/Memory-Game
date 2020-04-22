@@ -39,6 +39,7 @@ To Be Added
 
     Clone the repo and CD inside of the directory
     npm install
+    Change the url address of fetch request to localhost of backend
     npm start
 
 Be sure to visit the repo for the [backend](https://github.com/deryatanriverdi88/Memory-Game-Backend.git) and follow those instructions!
