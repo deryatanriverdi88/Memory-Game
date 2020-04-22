@@ -19,6 +19,13 @@ We developed this game to further expand our understanding of React. While devel
 
 ## Backend
 
+Total Recall's backend is built using a Ruby on Rails API, with endpoints for the users and scores.
+
+It is hosted on [heroku](http://total-recall-backend.herokuapp.com/).
+
+For more information about the api see below:
+[Total Recall Api ](https://github.com/deryatanriverdi88/Memory-Game-Backend.git)
+
 ## Frontend
 
 ## Demo 
