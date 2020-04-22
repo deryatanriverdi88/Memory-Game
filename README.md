@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Total Recall
 
-## Available Scripts
+## What is Total Recall?
 
-In the project directory, you can run:
+Total Recall is an arcade style memory game. Users can compete to have their score in top ten.
 
-### `yarn start`
+To play the live game click [here](https://total-recall-game.netlify.app/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Motivation
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+We developed this game to further expand our understanding of React. While developing the game we learned about:
 
-### `yarn test`
+1. Randomizing an array of information.
+2. Comparing two items at a time and comparing them.
+3. Game design.
+4. App wireframing and where specific states should live.
+5. Rendering a user's score and ranking when it fell outside of the top 10 highest scores.
+6. Displaying and manipulating a timer.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Backend
 
-### `yarn build`
+Total Recall's backend is built using a Ruby on Rails API, with endpoints for the users and scores.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It is hosted on [heroku](http://total-recall-backend.herokuapp.com/).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+For more information about the api see below:
+[Total Recall Api ](https://github.com/deryatanriverdi88/Memory-Game-Backend.git)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Frontend
 
-### `yarn eject`
+Total Recall's frontend is built using React.  The Total Recall logo was created wtih SVG. The game was styled with Responsive CSS to fit most screens and devices.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Demo 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To Be Added
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Installation
 
-## Learn More
+ Clone the repo and CD inside of the directory
+    npm install
+    npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Be sure to visit the repo for the [backend](https://github.com/deryatanriverdi88/Memory-Game-Backend.git) and follow those instructions!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
 
-### Code Splitting
+1. React
+2. SVG
+3. CSS
+4. JavaScript
+5. HTML
+6. Ruby on Rails
+7. Heroku
+8. Netlify
+9. Media Queries
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Future Updates
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Card Flip Animation
+2. Highlighting newest score.
+3. Different Difficulties.
