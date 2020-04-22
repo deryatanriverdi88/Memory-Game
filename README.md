@@ -54,3 +54,9 @@ Be sure to visit the repo for the [backend](https://github.com/deryatanriverdi88
 7. Heroku
 8. Netlify
 9. Media Queries
+
+## Future Updates
+
+1. Card Flip Animation
+2. Highlighting newest score.
+3. Different Difficulties.
