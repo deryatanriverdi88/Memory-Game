@@ -37,8 +37,9 @@ To Be Added
 
 ## Installation
 
- Clone the repo and CD inside of the directory
+    Clone the repo and CD inside of the directory
     npm install
+    Change the url address of fetch request to localhost of backend
     npm start
 
 Be sure to visit the repo for the [backend](https://github.com/deryatanriverdi88/Memory-Game-Backend.git) and follow those instructions!
@@ -54,6 +55,7 @@ Be sure to visit the repo for the [backend](https://github.com/deryatanriverdi88
 7. Heroku
 8. Netlify
 9. Media Queries
+10. Active Record Reset PK Sequence
 
 ## Future Updates
 
