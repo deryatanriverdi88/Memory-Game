@@ -24,7 +24,7 @@ Total Recall's backend is built using a Ruby on Rails API, with endpoints for th
 It is hosted on [heroku](http://total-recall-backend.herokuapp.com/).
 
 For more information about the api see below:
-[Total Recall Api ](https://github.com/deryatanriverdi88/Memory-Game-Backend.git)
+[Total Recall API ](https://github.com/deryatanriverdi88/Memory-Game-Backend.git)
 
 ## Frontend
 
