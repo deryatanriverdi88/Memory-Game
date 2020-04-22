@@ -45,4 +45,12 @@ Be sure to visit the repo for the [backend](https://github.com/deryatanriverdi88
 
 ## Technologies Used
 
-## Future Updates
+1. React
+2. SVG
+3. CSS
+4. JavaScript
+5. HTML
+6. Ruby on Rails
+7. Heroku
+8. Netlify
+9. Media Queries
