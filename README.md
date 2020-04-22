@@ -33,6 +33,8 @@ Total Recall's frontend is built using React.  The Total Recall logo was created
 
 ## Demo 
 
+To Be Added
+
 ## Installation
 
 ## Technologies Used
