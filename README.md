@@ -55,6 +55,7 @@ Be sure to visit the repo for the [backend](https://github.com/deryatanriverdi88
 7. Heroku
 8. Netlify
 9. Media Queries
+10. Active Record Reset PK Sequence
 
 ## Future Updates
 
