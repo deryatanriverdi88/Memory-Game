@@ -37,7 +37,7 @@ To Be Added
 
 ## Installation
 
- Clone the repo and CD inside of the directory
+    Clone the repo and CD inside of the directory
     npm install
     npm start
 
