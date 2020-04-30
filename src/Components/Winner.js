@@ -3,6 +3,7 @@ import HighScores from './HighScores'
 
 export default class Winner extends React.Component {
    state = {
+       disable: false,
        username: "",
        highScore: false,
        userId: null,
