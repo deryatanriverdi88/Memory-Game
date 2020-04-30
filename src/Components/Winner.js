@@ -3,6 +3,7 @@ import HighScores from './HighScores'
 
 export default class Winner extends React.Component {
    state = {
+       disable: false,
        username: "",
        highScore: false,
        userId: null,
@@ -18,6 +19,9 @@ export default class Winner extends React.Component {
 
    handleSubmit = (e) => {
     e.preventDefault()
+    this.setState({
+        disable: true
+    })
     fetch('https://total-recall-backend.herokuapp.com/users', {
         method: "POST",
         headers: {
@@ -63,7 +67,7 @@ export default class Winner extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="username">Your name:</label>
                     <input id="username" name="username" value={this.state.username} type="text" onChange={(e) => this.handleChange(e)}/>
-                    <input type="submit" id="submit"/>
+                    <input type="submit" id="submit" disabled={this.state.disable}/>
                 </form>
                 </> :
                 <HighScores playerScore={this.state.playerScore}/> }
