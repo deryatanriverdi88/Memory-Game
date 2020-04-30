@@ -19,6 +19,9 @@ export default class Winner extends React.Component {
 
    handleSubmit = (e) => {
     e.preventDefault()
+    this.setState({
+        disable: true
+    })
     fetch('https://total-recall-backend.herokuapp.com/users', {
         method: "POST",
         headers: {
