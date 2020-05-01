@@ -16,7 +16,7 @@ export default class HighScores extends Component {
             let scores = scoresArr.slice(0,10)
             if (scores.find(score => score.id === this.props.playerScore.id)) {
                 this.setState({
-                    highScores: scores.slice(0,10)
+                    highScores: scores
                 })
             }
             else {
@@ -35,14 +35,18 @@ export default class HighScores extends Component {
         if (this.state.newScores.length){
             return this.state.newScores.map(score => {
                 if (score.id === playerScore.id) {
-                    return <p key={playerScore.id}> {this.state.scoreIndex + 1} - {playerScore.user.username} - {playerScore.score}</p>
+                    return <p key={playerScore.id} style={{"color":"red"}}> {this.state.scoreIndex + 1} - {playerScore.user.username} - {playerScore.score}</p>
                 } else {
                     return <p key={score.id}>{i++} - {score.user.username} - {score.score}</p>
                 }
             })
         } else {
             return this.state.highScores.map(score => {
+                if (score.id === playerScore.id) {
+                    return <p key={playerScore.id} style={{"color":"red"}}> {i++} - {playerScore.user.username} - {playerScore.score}</p>
+                } else {
                     return <p key={score.id}>{i++} - {score.user.username} - {score.score}</p>
+                }
                 })
             }
     }
