@@ -16,7 +16,7 @@ export default class HighScores extends Component {
             let scores = scoresArr.slice(0,10)
             if (scores.find(score => score.id === this.props.playerScore.id)) {
                 this.setState({
-                    highScores: scores.slice(0,10)
+                    highScores: scores
                 })
             }
             else {
