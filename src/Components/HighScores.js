@@ -42,7 +42,11 @@ export default class HighScores extends Component {
             })
         } else {
             return this.state.highScores.map(score => {
+                if (score.id === playerScore.id) {
+                    return <p key={playerScore.id} style={{"color":"red"}}> {i++} - {playerScore.user.username} - {playerScore.score}</p>
+                } else {
                     return <p key={score.id}>{i++} - {score.user.username} - {score.score}</p>
+                }
                 })
             }
     }
