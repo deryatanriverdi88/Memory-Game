@@ -191,14 +191,14 @@ renderGame = () => {
     case "play":
       return <CardList images={this.state.images} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
     case "winner":
-      return <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} finalScore={this.state.finalScore} />
+      return <Winner resetGame={this.resetGame} finalScore={this.state.finalScore} />
    }
 }
 
  render() {
   return(
    <div className="game">
-          <Score timer={this.state.timer} moves={this.state.moves} gameStatus={this.state.gameStatus} streak={this.state.streak} score={this.state.score} finalScore={this.state.finalScore}/>
+          <Score gameStatus={this.state.gameStatus} streak={this.state.streak} score={this.state.score} finalScore={this.state.finalScore}/>
          <div className='timer'>
          {this.state.gameStatus === "play"  ?  <p>  Time : {this.state.timer} </p>  : <p> Your time was : {this.state.winTime} </p>}
          <p className="moves">Moves: {this.state.moves}</p>
