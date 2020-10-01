@@ -55,7 +55,7 @@ export default class Winner extends React.Component {
 
 
     render(){
-        const {moves, resetGame} = this.props
+        const {resetGame} = this.props
         return (
             <div className="winner" >
               { !this.state.highScore ?

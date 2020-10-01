@@ -157,10 +157,6 @@ compareCards = () => {
 }
 //
 
-
-
-//
-
 // we want to eventually show players a breakdown of their scores
 // to do that we are going to have to update our math
 //that we can see our point bonuses or multipliers for streak time and moves.
@@ -193,16 +189,16 @@ resetGame = () => {
 renderGame = () => {
    switch (this.state.gameStatus){
     case "play":
-      return <CardList images={this.state.images} moves={this.state.moves} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
+      return <CardList images={this.state.images} choosenCards={this.choosenCards} winner={this.winner} firstCard={this.state.firstCard}/>
     case "winner":
-      return <Winner redirect={this.redirect} moves={this.state.moves}  resetGame={this.resetGame} finalScore={this.state.finalScore} />
+      return <Winner resetGame={this.resetGame} finalScore={this.state.finalScore} />
    }
 }
 
  render() {
   return(
    <div className="game">
-          <Score timer={this.state.timer} moves={this.state.moves} gameStatus={this.state.gameStatus} streak={this.state.streak} score={this.state.score} finalScore={this.state.finalScore}/>
+          <Score gameStatus={this.state.gameStatus} streak={this.state.streak} score={this.state.score} finalScore={this.state.finalScore}/>
          <div className='timer'>
          {this.state.gameStatus === "play"  ?  <p>  Time : {this.state.timer} </p>  : <p> Your time was : {this.state.winTime} </p>}
          <p className="moves">Moves: {this.state.moves}</p>
