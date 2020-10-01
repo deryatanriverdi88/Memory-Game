@@ -157,10 +157,6 @@ compareCards = () => {
 }
 //
 
-
-
-//
-
 // we want to eventually show players a breakdown of their scores
 // to do that we are going to have to update our math
 //that we can see our point bonuses or multipliers for streak time and moves.
