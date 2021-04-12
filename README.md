@@ -46,6 +46,9 @@ Be sure to visit the repo for the [backend](https://github.com/deryatanriverdi88
 
 ## Technologies Used
 
+
+testing
+
 1. React
 2. SVG
 3. CSS
